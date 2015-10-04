@@ -22,7 +22,6 @@ namespace GBAssets.Character.ThirdPerson
 		[Range(0f, 1f)][SerializeField] float m_Skin = 0.5f;
 		[Range(0f, 1f)][SerializeField] float m_Offset = 0.5f;
         [Range(1f, 2f)][SerializeField] float m_GrabWidth = 1.1f;
-        [Range(0f, 1f)][SerializeField] float m_Step = 0.2f;
 		[Range(0, MAX_SLOPLIMIT)][SerializeField] int m_SlopeLimit = 44;
         [Range(0, MAX_SLOPLIMIT)][SerializeField] int m_WallUpLimit = 30;
         [Range(0, MAX_SLOPLIMIT)][SerializeField] int m_GrabEdge = 5;
@@ -137,7 +136,7 @@ namespace GBAssets.Character.ThirdPerson
 
                 foreach (ContactPoint c in contacts)
                 {
-                    if(other.gameObject.name.StartsWith(m_Helpers.push))
+                    if(speed > 0 && other.gameObject.name.StartsWith(m_Helpers.push))
                     {
                         contactPoint = c.point;
                         contactNormal = c.normal;
@@ -291,23 +290,6 @@ namespace GBAssets.Character.ThirdPerson
             Debug.DrawRay(pos, Vector3.down, Color.red);
 #endif
             return Physics.Raycast(ray, out grab, height * m_GrabRange, 1) && grab.normal.y > grab_edge;
-        }
-
-        public virtual bool CheckStep()
-        {
-			if (speed <= 0) return false;
-
-			float height = m_CapsuleHeight * m_Step * transform.localScale.y;
-			Vector3 pos =
-				transform.position +
-				transform.forward * m_Capsule.radius * transform.localScale.z * m_GrabWidth +
-				Vector3.up * height;
-			Ray ray = new Ray(pos, Vector3.down);
-
-#if UNITY_EDITOR
-			Debug.DrawRay(pos, Vector3.down, Color.red);
-#endif
-			return Physics.Raycast(ray, out grab, height, 1) && grab.normal.y > grab_edge;
         }
 	}
 }

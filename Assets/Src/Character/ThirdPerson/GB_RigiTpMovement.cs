@@ -9,22 +9,25 @@ namespace GBAssets.Character.ThirdPerson
 		[Serializable]
 		class Parameters
 		{
-            [SerializeField]
-            public string
-                forward = "Forward",
-                turn = "Turn",
-                up = "Up",
-                right = "Right",
-                crouch = "Crouch",
-                jump = "Jump",
-                jumpLeg = "JumpLeg",
-                slide = "Slide",
-                ground = "Ground",
-                contact = "Contact",
-                push = "Push";
+			[SerializeField]
+			public string
+				forward = "Forward",
+				turn = "Turn",
+				up = "Up",
+				right = "Right",
+				crouch = "Crouch",
+				jump = "Jump",
+				jumpLeg = "JumpLeg",
+				slide = "Slide",
+				ground = "Ground",
+				contact = "Contact",
+				push = "Push",
+				grab = "Grab",
+				climb = "Climb";
 		}
 
 		[SerializeField] Parameters parameters = new Parameters();
+
 		[Range(0f, 10f)][SerializeField] float sensity = 0.1f;
 
 		// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -52,6 +55,8 @@ namespace GBAssets.Character.ThirdPerson
 				animator.SetBool(parameters.contact, physic.contact);
 				animator.SetBool(parameters.jump, physic.jump);
                 animator.SetBool(parameters.push, physic.push);
+				animator.SetBool(parameters.grab, physic.CheckEdge());
+                animator.SetFloat(parameters.climb, physic.grab.distance);
 			}
 		}
 	}

@@ -20,6 +20,9 @@ namespace GBAssets.Character.ThirdPerson
         [SerializeField]
         Parameters parameters = new Parameters();
 
+		[SerializeField]
+		AvatarTarget target = AvatarTarget.RightFoot;
+
         [Range(0f, 10f)]
         [SerializeField]
         float sensity = 0.1f;
@@ -50,7 +53,7 @@ namespace GBAssets.Character.ThirdPerson
             {
                 if (!animator.IsInTransition(layerIndex))
                 {
-                    animator.MatchTarget(physic.grab.point, Quaternion.identity, AvatarTarget.RightFoot, mask, start, goal);
+					animator.MatchTarget(physic.grab.point, Quaternion.identity, target, mask, start, goal);
                 }
             }
         }
