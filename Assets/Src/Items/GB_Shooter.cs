@@ -1,9 +1,11 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 namespace GBAssets.Items
 {
-	public class GB_Shoot : MonoBehaviour
+	[RequireComponent(typeof(Animator))]
+	public class GB_Shooter : MonoBehaviour
 	{
 		[SerializeField]
 		GameObject prefab = null;
@@ -12,9 +14,34 @@ namespace GBAssets.Items
 		float spread = 0;
 
 		[SerializeField]
+		string button = "Fire1";
+
+		[SerializeField]
+		string stateName = "Shoot";
+
+		[SerializeField]
 		Vector3 offset = Vector3.zero;
 
-		void ApplyShoot()
+		protected Animator animator {get; private set;}
+
+		void Start()
+		{
+			animator = GetComponent<Animator>();
+		}
+
+		void FixedUpdate()
+		{
+			if (CrossPlatformInputManager.GetButton(button))
+			{
+				animator.SetBool(stateName, true);
+			}
+			else
+			{
+				animator.SetBool(stateName, false);
+			}
+		}
+
+		public void ApplyShoot()
 		{
 			if (prefab != null)
 			{

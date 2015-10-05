@@ -13,8 +13,8 @@ namespace GBAssets.Items
 		[SerializeField]
 		float demage = 10;
 
-		Rigidbody rig = null;
-		float alive = 0;
+		protected Rigidbody rig {get; private set;}
+		protected float alive {get; private set;}
 
 		void Start()
 		{

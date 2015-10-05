@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-namespace GBAssets.Utils
+namespace GBAssets.CameraControl
 {
 	[RequireComponent(typeof(Camera))]
 	public class GB_CamCollidePreventer : MonoBehaviour
