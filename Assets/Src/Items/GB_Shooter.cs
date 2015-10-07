@@ -7,6 +7,15 @@ namespace GBAssets.Items
 	[RequireComponent(typeof(Animator))]
 	public class GB_Shooter : MonoBehaviour
 	{
+		[System.Serializable]
+		class BoolControl
+		{
+			[SerializeField]
+			public string button = "Fire1";
+			[SerializeField]
+			public string param = "Shoot";
+		}
+
 		[SerializeField]
 		GameObject prefab = null;
 
@@ -14,13 +23,10 @@ namespace GBAssets.Items
 		float spread = 0;
 
 		[SerializeField]
-		string button = "Fire1";
-
-		[SerializeField]
-		string stateName = "Shoot";
-
-		[SerializeField]
 		Vector3 offset = Vector3.zero;
+
+		[SerializeField]
+		BoolControl[] controls = { new BoolControl() };
 
 		protected Animator animator {get; private set;}
 
@@ -31,14 +37,24 @@ namespace GBAssets.Items
 
 		void FixedUpdate()
 		{
-			if (CrossPlatformInputManager.GetButton(button))
+			foreach (BoolControl c in controls)
 			{
-				animator.SetBool(stateName, true);
+				if (CrossPlatformInputManager.GetButton(c.button))
+				{
+					animator.SetBool(c.param, true);
+				}
+				else if (CrossPlatformInputManager.GetAxis(c.button) > 0)
+				{
+					animator.SetBool(c.param, true);
+				}
+				else
+				{
+					animator.SetBool(c.param, false);
+				}
+
+				
 			}
-			else
-			{
-				animator.SetBool(stateName, false);
-			}
+			
 		}
 
 		public void ApplyShoot()
