@@ -16,7 +16,7 @@ namespace GBAssets.Utils
 		{
 			if(tag != null)
 			{
-				this.enabled = true;
+				enabled = true;
 			}
 			searchTag = tag;
 		}
@@ -28,7 +28,7 @@ namespace GBAssets.Utils
 
 		void Awake ()
 		{
-			if (searchTag == null) this.enabled = false;
+			if (searchTag == null) enabled = false;
 		}
 
 		void OnTriggerStay(Collider other)
@@ -43,12 +43,12 @@ namespace GBAssets.Utils
 				float dist2 = (adopted.position - this.transform.position).magnitude;
 				if(dist1 < dist2)
 				{
-					this.adopted = other.transform;
+					adopted = other.transform;
 				}
 			}
 			else
 			{
-				this.adopted = other.transform;
+				adopted = other.transform;
 			}
 		}
 
@@ -56,7 +56,7 @@ namespace GBAssets.Utils
 		{
 			if(IsTarget(other.gameObject))
 			{
-				this.adopted = null;
+				adopted = null;
 			}
 		}
 	}

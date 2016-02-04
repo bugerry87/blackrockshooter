@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
+﻿using UnityEngine;
 
 namespace GBAssets.Items
 {
@@ -39,11 +37,11 @@ namespace GBAssets.Items
 		{
 			foreach (BoolControl c in controls)
 			{
-				if (CrossPlatformInputManager.GetButton(c.button))
+                if (Input.GetButton(c.button))
 				{
 					animator.SetBool(c.param, true);
 				}
-				else if (CrossPlatformInputManager.GetAxis(c.button) > 0)
+				else if (Input.GetAxis(c.button) != 0)
 				{
 					animator.SetBool(c.param, true);
 				}
@@ -51,10 +49,7 @@ namespace GBAssets.Items
 				{
 					animator.SetBool(c.param, false);
 				}
-
-				
 			}
-			
 		}
 
 		public void ApplyShoot()
@@ -72,5 +67,15 @@ namespace GBAssets.Items
 				}
 			}
 		}
+
+        public void SpawnShooter()
+        {
+            animator.SetBool("Spawn", true);
+        }
+
+        public void DespawnShooter()
+        {
+            animator.SetBool("Spawn", false);
+        }
 	}
 }

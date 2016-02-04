@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using GBAssets.Character;
 
 namespace GBAssets.Character.ThirdPerson
 {
@@ -23,7 +22,8 @@ namespace GBAssets.Character.ThirdPerson
 				contact = "Contact",
 				push = "Push",
 				grab = "Grab",
-				climb = "Climb";
+				climb = "Climb",
+                focus = "Focus";
 		}
 
 		[SerializeField] Parameters parameters = new Parameters();
@@ -56,6 +56,7 @@ namespace GBAssets.Character.ThirdPerson
 				animator.SetBool(parameters.jump, physic.jump);
                 animator.SetBool(parameters.push, physic.push);
 				animator.SetBool(parameters.grab, physic.CheckEdge());
+                animator.SetBool(parameters.focus, physic.fire2);
                 animator.SetFloat(parameters.climb, physic.grab.distance);
 			}
 		}

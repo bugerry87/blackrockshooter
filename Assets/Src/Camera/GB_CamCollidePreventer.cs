@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
 namespace GBAssets.CameraControl
 {
@@ -11,12 +9,11 @@ namespace GBAssets.CameraControl
 		[SerializeField] Transform target = null; 
 		[SerializeField] float min = 1.0f;
 		[SerializeField] float max = 10.0f;
-		//[SerializeField] float beside = 0f;
+        [SerializeField] float destine = 5f;
 		[SerializeField] float normDist = 0.5f;
 		[SerializeField] string zAxis = "Mouse ScrollWheel";
-		[SerializeField] int ignoreLayer = 8;
-		
-		private float desired;
+		[SerializeField] int ignoreLayer = 8;		
+
 		private Ray rayLeft;
 		private Ray rayRight;
 		private Ray rayTop;
@@ -26,13 +23,13 @@ namespace GBAssets.CameraControl
 
 		void Awake()
 		{
-			if(target == null) this.enabled = false;
-			desired = max;
+			if(target == null) enabled = false;
+			destine = max;
 		}
 
 		void FixedUpdate()
 		{
-			Vector3 best = Vector3.back * desired;
+			Vector3 best = Vector3.back * destine;
 			
 			if(others.Count > 0){
 				rayLeft.origin = target.position;
@@ -40,7 +37,7 @@ namespace GBAssets.CameraControl
 				rayTop.origin = target.position;
 				rayBottom.origin = target.position;
 				
-				Vector3 dir = -transform.forward * desired;
+				Vector3 dir = -transform.forward * destine;
 				
 				rayLeft.direction = dir + transform.right * -normDist;
 				rayRight.direction = dir + transform.right * normDist;
@@ -56,19 +53,19 @@ namespace GBAssets.CameraControl
 
 				foreach(Collider other in others)
 				{
-					if(other.Raycast(rayLeft, out hit, desired))
+					if(other.Raycast(rayLeft, out hit, destine))
 					{
 						best = calcBest(hit, best);
 					}
-					if(other.Raycast(rayRight, out hit, desired))
+					if(other.Raycast(rayRight, out hit, destine))
 					{
 						best = calcBest(hit, best);
 					}
-					if(other.Raycast(rayTop, out hit, desired))
+					if(other.Raycast(rayTop, out hit, destine))
 					{
 						best = calcBest(hit, best);
 					}
-					if(other.Raycast(rayBottom, out hit, desired))
+					if(other.Raycast(rayBottom, out hit, destine))
 					{
 						best = calcBest(hit, best);
 					}
@@ -77,9 +74,9 @@ namespace GBAssets.CameraControl
 			transform.localPosition = best;
 			
 			//Change desire for next Update
-			desired -= CrossPlatformInputManager.GetAxisRaw(zAxis);
-			desired = Mathf.Max(desired, min);
-			desired = Mathf.Min(desired, max);
+			destine -= Input.GetAxisRaw(zAxis);
+			destine = Mathf.Max(destine, min);
+			destine = Mathf.Min(destine, max);
 		}
 		
 		Vector3 calcBest(RaycastHit hit, Vector3 old)
@@ -114,5 +111,15 @@ namespace GBAssets.CameraControl
 		{
 			others.Remove(other);
 		}
+
+        public void SetDestine(float destine)
+        {
+            this.destine = destine;
+        }
+
+        public float GetDestine()
+        {
+            return destine;
+        }
 	}
 }

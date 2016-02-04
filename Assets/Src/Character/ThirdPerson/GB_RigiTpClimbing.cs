@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using GBAssets.Character;
 
 namespace GBAssets.Character.ThirdPerson
 {
@@ -20,12 +19,12 @@ namespace GBAssets.Character.ThirdPerson
         [SerializeField]
         Parameters parameters = new Parameters();
 
-		[SerializeField]
-		AvatarTarget target = AvatarTarget.RightFoot;
-
         [Range(0f, 10f)]
         [SerializeField]
         float sensity = 0.1f;
+        
+        [SerializeField]
+		AvatarTarget target = AvatarTarget.RightFoot;        
 
         [Range(0f, 1f)]
         [SerializeField]
@@ -37,23 +36,24 @@ namespace GBAssets.Character.ThirdPerson
 
         MatchTargetWeightMask mask = new MatchTargetWeightMask(Vector3.up, 0);
 
-		// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-		override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+        override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 		{
 			if(HasPhysics(animator))
 			{
 				animator.SetFloat(parameters.forward, physic.speed, sensity, Time.deltaTime);
                 animator.SetFloat(parameters.up, physic.up);
-			}
+            }
 		}
 
-        public override void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        // Occurs errors since since 5.3.x
+        override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (HasPhysics(animator))
             {
                 if (!animator.IsInTransition(layerIndex))
                 {
-					animator.MatchTarget(physic.grab.point, Quaternion.identity, target, mask, start, goal);
+                    animator.MatchTarget(physic.grab.point, Quaternion.identity, target, mask, start, goal);
                 }
             }
         }
@@ -65,5 +65,5 @@ namespace GBAssets.Character.ThirdPerson
                 animator.SetBool(parameters.grab, false);
             }
         }
-	}
+    }
 }

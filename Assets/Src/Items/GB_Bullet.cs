@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace GBAssets.Items
 {
@@ -35,10 +34,10 @@ namespace GBAssets.Items
 
 		void OnTriggerEnter(Collider other)
 		{
-			if (other.tag.Equals("Player"))
+			if (other.tag.Equals("Enemy"))
 			{
 #if UNITY_EDITOR
-				Debug.Log("HIT");
+				Debug.Log("HIT: " + demage);
 #endif
 				GameObject.Destroy(gameObject);
 			}

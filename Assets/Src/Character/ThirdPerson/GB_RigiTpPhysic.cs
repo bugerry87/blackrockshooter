@@ -70,6 +70,7 @@ namespace GBAssets.Character.ThirdPerson
 			contactNormal = Vector3.up;
 			m_CapsuleHeight = m_Capsule.height;
 			m_CapsuleCenter = m_Capsule.center;
+            MatchTarget = DoMatchTarget;
 		}
 
         void Awake()
@@ -291,5 +292,14 @@ namespace GBAssets.Character.ThirdPerson
 #endif
             return Physics.Raycast(ray, out grab, height * m_GrabRange, 1) && grab.normal.y > grab_edge;
         }
-	}
+
+        public Action<Animator, int, AvatarTarget, MatchTargetWeightMask> MatchTarget = null;
+        private void DoMatchTarget(Animator animator, int layerIndex, AvatarTarget target, MatchTargetWeightMask mask)
+        {
+            if (!animator.IsInTransition(layerIndex))
+            {
+                animator.MatchTarget(grab.point, Quaternion.identity, target, mask, 0, 1);
+            }
+        }
+    }
 }

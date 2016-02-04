@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace GBAssets.Character
@@ -16,10 +15,10 @@ namespace GBAssets.Character
 		public bool jump { get; set; }
 		public bool crouch { get; set; }
 		public bool walk { get; set; }
-		public bool actionA { get; set; }
-		public bool actionB { get; set; }
-		public bool actionX { get; set; }
-		public bool actionY { get; set; }
+		public bool fire1 { get; set; }
+		public bool fire2 { get; set; }
+		public bool action1 { get; set; }
+		public bool action2 { get; set; }
 
 		//Movement
 		public Vector3 movement { get; protected set; }
