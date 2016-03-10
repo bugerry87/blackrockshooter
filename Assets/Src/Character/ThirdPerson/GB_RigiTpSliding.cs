@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GBAssets.Character.ThirdPerson
 {
-	public class GB_RigiTpSliding : GB_ACharState<GB_RigiTpPhysic>
+	public sealed class GB_RigiTpSliding : GB_ACharState<GB_RigiTpPhysic>
 	{
 		[Serializable]
 		class Parameters

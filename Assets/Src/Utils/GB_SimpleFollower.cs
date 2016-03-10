@@ -4,16 +4,15 @@ namespace GBAssets.Utils
 {
 	public class GB_SimpleFollower : GB_AdoptedTarget
 	{
-		enum UpdateType {FixedUpdate, Update, LateUpdate}
-
-		/*
-		static Vector3 CalcPosition(Vector3 follower, Vector3 target, Vector3 factor)
-		{
-			return target - (Vector3.Scale(target - follower, factor));
-		}
-		*/
-
 		[SerializeField] UpdateType updateType = UpdateType.FixedUpdate;
+
+        void Update()
+		{
+			if(updateType == UpdateType.Update)
+			{
+				DoUpdate();
+			}
+		}
 
 		void FixedUpdate()
 		{
@@ -23,17 +22,17 @@ namespace GBAssets.Utils
 			}
 		}
 
-		void Update()
+		void LateUpdate()
 		{
-			if(updateType == UpdateType.Update)
+			if(updateType == UpdateType.LateUpdate)
 			{
 				DoUpdate();
 			}
 		}
 
-		void LateUpdate()
+        public void ManualUpdate()
 		{
-			if(updateType == UpdateType.LateUpdate)
+			if(updateType == UpdateType.ManualUpdate)
 			{
 				DoUpdate();
 			}

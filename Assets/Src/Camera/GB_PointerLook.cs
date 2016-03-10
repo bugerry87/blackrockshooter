@@ -10,11 +10,10 @@ namespace GBAssets.CameraControl
         UseY = 2
     }
 
-	public class GB_PointerLook : MonoBehaviour
+	public class GB_PointerLook : GB_AUpdateMode
     {
-		[SerializeField] GB_AdoptedTarget target = null;
-        [SerializeField] UpdateType updateType = UpdateType.LateUpdate;
         [SerializeField] RotationAxes axes = RotationAxes.UseXAndY;
+		[SerializeField] GB_AdoptedTarget target = null;
 		[SerializeField] float sensitivityX = 15F;
 		[SerializeField] float sensitivityY = 15F;
 		
@@ -38,37 +37,15 @@ namespace GBAssets.CameraControl
             }
 		}
 
-        void FixedUpdate ()
-		{
-			if(target && target.adopted)
+        protected override void DoUpdate(float deltaTime)
+        {
+            /*
+            if(target && target.adopted)
 			{
 				transform.forward = target.adopted.position - transform.position;
 			}
+            */
 
-            if(updateType == UpdateType.FixedUpdate)
-            {
-                DoUpdate();
-            }
-		}
-
-		void LateUpdate ()
-		{
-			if(updateType == UpdateType.LateUpdate)
-            {
-                DoUpdate();
-            }
-		}
-
-        public void ManualUpdate()
-        {
-            if(updateType == UpdateType.ManualUpdate)
-            {
-                DoUpdate();
-            }
-        }
-
-        void DoUpdate()
-        {
             if (target && target.adopted || disableButton.Length != 0 && (Input.GetButton(disableButton) || Mathf.Abs(Input.GetAxis(disableButton)) > 0))
 			{
 				//DoNothing

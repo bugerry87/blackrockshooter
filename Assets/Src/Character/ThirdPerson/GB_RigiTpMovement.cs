@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GBAssets.Character.ThirdPerson
 {
-	public class GB_RigiTpMovement : GB_ACharState<GB_RigiTpPhysic>
+	public sealed class GB_RigiTpMovement : GB_ACharState<GB_RigiTpPhysic>
 	{
 		[Serializable]
 		class Parameters
@@ -22,8 +22,7 @@ namespace GBAssets.Character.ThirdPerson
 				contact = "Contact",
 				push = "Push",
 				grab = "Grab",
-				climb = "Climb",
-                focus = "Focus";
+				climb = "Climb";
 		}
 
 		[SerializeField] Parameters parameters = new Parameters();
@@ -43,20 +42,19 @@ namespace GBAssets.Character.ThirdPerson
                 if (physic.contact)
                     physic.jumpLeg = (Mathf.Repeat(stateInfo.normalizedTime + 0.5f, 1) < 0.5f ? 1f : -1f) * physic.speed;
 
-				animator.SetFloat(parameters.forward, physic.speed, sensity, Time.deltaTime);
-				animator.SetFloat(parameters.turn, physic.turnAmount, sensity, Time.deltaTime);
-				animator.SetFloat(parameters.up, physic.up, sensity, Time.deltaTime);
-				animator.SetFloat(parameters.right, physic.right, sensity, Time.deltaTime);
-				animator.SetFloat(parameters.jumpLeg, physic.jumpLeg);
+                animator.SetFloat(parameters.forward, physic.speed, sensity, Time.deltaTime);
+                animator.SetFloat(parameters.turn, physic.turnAmount, sensity, Time.deltaTime);
+                animator.SetFloat(parameters.up, physic.up, sensity, Time.deltaTime);
+                animator.SetFloat(parameters.right, physic.right, sensity, Time.deltaTime);
+                animator.SetFloat(parameters.jumpLeg, physic.jumpLeg);
 
-				animator.SetBool(parameters.crouch, physic.crouch);
-				animator.SetBool(parameters.ground, physic.grounded);
-				animator.SetBool(parameters.slide, physic.sliding);
-				animator.SetBool(parameters.contact, physic.contact);
-				animator.SetBool(parameters.jump, physic.jump);
+                animator.SetBool(parameters.crouch, physic.crouch);
+                animator.SetBool(parameters.ground, physic.grounded);
+                animator.SetBool(parameters.slide, physic.sliding);
+                animator.SetBool(parameters.contact, physic.contact);
+                animator.SetBool(parameters.jump, physic.jump);
                 animator.SetBool(parameters.push, physic.push);
-				animator.SetBool(parameters.grab, physic.CheckEdge());
-                animator.SetBool(parameters.focus, physic.fire2);
+                animator.SetBool(parameters.grab, physic.CheckEdge());
                 animator.SetFloat(parameters.climb, physic.grab.distance);
 			}
 		}

@@ -1,8 +1,9 @@
 using UnityEngine;
+using GBAssets.Utils;
 
 namespace GBAssets.CameraControl
 {
-    public class GB_AutoCam : GB_PivotBasedCameraRig
+    public class GB_AutoCam : GB_APivotBasedCameraRig
     {
         [SerializeField] private float m_MoveSpeed = 3; // How fast the rig will move to keep up with target's position
         [SerializeField] private float m_TurnSpeed = 1; // How fast the rig will turn to keep up with target's rotation
@@ -13,21 +14,12 @@ namespace GBAssets.CameraControl
         [SerializeField] private float m_TargetVelocityLowerLimit = 4f;// the minimum velocity above which the camera turns towards the object's velocity. Below this we use the object's forward direction.
         [SerializeField] private float m_SmoothTurnTime = 0.2f; // the smoothing for the camera's rotation
         [SerializeField] private string m_DisableButton = "Fire2";
-        [SerializeField] private GB_PointerLook pointerLook = null;
+        [SerializeField] private GB_AUpdateMode postCorrection = null;
 
         private float m_LastFlatAngle; // The relative angle of the target and the rig from the previous frame.
         private float m_CurrentTurnAmount; // How much to turn the camera
         private float m_TurnSpeedVelocityChange; // The change in the turn speed velocity
         private Vector3 m_RollUp = Vector3.up;// The roll of the camera around the z axis ( generally this will always just be up )
-
-        override protected void Start()
-        {
-            base.Start();
-            if(pointerLook == null)
-            {
-                pointerLook = GetComponent<GB_PointerLook>();
-            }
-        }
 
         override protected void FollowTarget(float deltaTime)
         {
@@ -135,9 +127,9 @@ namespace GBAssets.CameraControl
                 transform.rotation = Quaternion.Lerp(transform.rotation, rollRotation, m_TurnSpeed*m_CurrentTurnAmount*deltaTime);
             }
 
-            if(pointerLook != null)
+            if(postCorrection != null && postCorrection != this)
             {
-                pointerLook.ManualUpdate();
+                postCorrection.ManualUpdate(updateType);
             }
         }
     }

@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace GBAssets.Character.ThirdPerson
 {
@@ -26,10 +24,10 @@ namespace GBAssets.Character.ThirdPerson
 		public bool jump { get; private set; }
 		public bool crouch { get; private set; }
 		public bool walk { get; private set; }
-        public bool fire1 { get; private set; }
-        public bool fire2 { get; private set; }
-        public bool action1 { get; private set; }
-        public bool action2 { get; private set; }
+        public float fire { get; private set; }
+        public float focus { get; private set; }
+        public bool actionX { get; private set; }
+        public bool actionY { get; private set; }
         
         private void Start()
         {
@@ -53,10 +51,10 @@ namespace GBAssets.Character.ThirdPerson
 			jump = Input.GetButtonDown(m_JumpButton) || Input.GetAxis(m_JumpButton) != 0; 
 			crouch = Input.GetButton(m_CrouchButton) || Input.GetAxis(m_CrouchButton) != 0;
 			walk = Input.GetButton(m_WalkButton) || Input.GetAxis(m_WalkButton) != 0;
-            fire1 = Input.GetButton(m_FireButton1) || Input.GetAxis(m_FireButton1) != 0;
-            fire2 = Input.GetButton(m_FireButton2) || Input.GetAxis(m_FireButton2) != 0;;
-            action1 = Input.GetButton(m_ActionButton1) || Input.GetAxis(m_ActionButton1) != 0;
-            action2 = Input.GetButton(m_ActionButton2) || Input.GetAxis(m_ActionButton2) != 0;
+            fire = Input.GetButton(m_FireButton1) ? 1 : Input.GetAxis(m_FireButton1);
+            focus = Input.GetButton(m_FireButton2) ? 1 : Input.GetAxis(m_FireButton2);
+            actionX = Input.GetButton(m_ActionButton1) || Input.GetAxis(m_ActionButton1) != 0;
+            actionY = Input.GetButton(m_ActionButton2) || Input.GetAxis(m_ActionButton2) != 0;
 
             // calculate move direction to pass to character
             if (m_RelativeTo != null)
@@ -76,10 +74,10 @@ namespace GBAssets.Character.ThirdPerson
 			tp_physic.crouch = crouch;
 			tp_physic.walk = walk;
 			tp_physic.jump |= jump;
-            tp_physic.fire1 = fire1;
-            tp_physic.fire2 = fire2;
-            tp_physic.action1 = action1;
-            tp_physic.action2 = action2;
+            tp_physic.fire = fire;
+            tp_physic.focus = focus;
+            tp_physic.action1 = actionX;
+            tp_physic.action2 = actionY;
         }
     }
 }

@@ -4,6 +4,6 @@ namespace GBAssets.EventSystems
 {
     public interface GB_IMessageHandler : IEventSystemHandler
     {
-        void OnMessage(object data);
+        void OnMessage(string message);
     }
 }

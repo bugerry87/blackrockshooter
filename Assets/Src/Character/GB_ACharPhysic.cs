@@ -4,21 +4,19 @@ namespace GBAssets.Character
 {
 	public abstract class GB_ACharPhysic : MonoBehaviour
 	{
-		public static readonly Vector3 XZ = new Vector3(1, 0, 1);
-		public const int MAX_SLOPLIMIT = 90;
-
 		//Mode
 		public bool update { get; set; }
 
 		//Controls
 		public Vector3 move { get; set; }
 		public bool jump { get; set; }
-		public bool crouch { get; set; }
-		public bool walk { get; set; }
-		public bool fire1 { get; set; }
-		public bool fire2 { get; set; }
 		public bool action1 { get; set; }
 		public bool action2 { get; set; }
+        public bool action3 { get; set; }
+		public bool walk { get; set; }
+		public bool crouch { get; set; }
+		public float focus { get; set; }
+		public float fire { get; set; }
 
 		//Movement
 		public Vector3 movement { get; protected set; }

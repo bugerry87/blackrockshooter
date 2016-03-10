@@ -9,7 +9,7 @@ namespace GBAssets.Utils
 		[SerializeField] Transform m_target = null;
 		[SerializeField] string m_searchTag = null;
 
-		public Transform adopted { get{ return m_target; } set{ this.m_target = value; } }
+		public Transform adopted { get{ return m_target; } set{ m_target = value; } }
 		public string searchTag { get{ return m_searchTag; } private set{ this.m_searchTag = value; } }
 
 		public void SetSearchTag(string tag)
@@ -39,8 +39,8 @@ namespace GBAssets.Utils
 			} 
 			else if(adopted != null)
 			{
-				float dist1 = (other.transform.position - this.transform.position).magnitude;
-				float dist2 = (adopted.position - this.transform.position).magnitude;
+				float dist1 = (other.transform.position - transform.position).magnitude;
+				float dist2 = (adopted.position - transform.position).magnitude;
 				if(dist1 < dist2)
 				{
 					adopted = other.transform;

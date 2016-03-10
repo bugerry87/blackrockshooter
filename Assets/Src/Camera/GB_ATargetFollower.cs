@@ -1,19 +1,12 @@
 using UnityEngine;
+using GBAssets.Utils;
 
 namespace GBAssets.CameraControl
 {
-    public enum UpdateType // The available methods of updating are:
-    {
-        LateUpdate, // Update in LateUpdate. (for tracking objects that are moved in Update)
-        FixedUpdate, // Update in FixedUpdate (for tracking rigidbodies).
-        ManualUpdate, // user must call to update camera
-    }
-
-    public abstract class GB_ATargetFollower : MonoBehaviour
+    public abstract class GB_ATargetFollower : GB_AUpdateMode
     {
         [SerializeField] protected Transform m_Target;            // The target object to follow
         [SerializeField] private bool m_AutoTargetPlayer = true;  // Whether the rig should automatically target the player.
-        [SerializeField] private UpdateType m_UpdateType;         // stores the selected update type
 
         protected Rigidbody targetRigidbody;
 
@@ -30,49 +23,13 @@ namespace GBAssets.CameraControl
             targetRigidbody = m_Target.GetComponent<Rigidbody>();
         }
 
-
-        private void FixedUpdate()
+        protected override void DoUpdate(float delta)
         {
-            // we update from here if updatetype is set to Fixed, or in auto mode,
-            // if the target has a rigidbody, and isn't kinematic.
             if (m_AutoTargetPlayer && (m_Target == null || !m_Target.gameObject.activeSelf))
             {
                 FindAndTargetPlayer();
             }
-            if (m_UpdateType == UpdateType.FixedUpdate)
-            {
-                FollowTarget(Time.deltaTime);
-            }
-        }
-
-
-        private void LateUpdate()
-        {
-            // we update from here if updatetype is set to Late, or in auto mode,
-            // if the target does not have a rigidbody, or - does have a rigidbody but is set to kinematic.
-            if (m_AutoTargetPlayer && (m_Target == null || !m_Target.gameObject.activeSelf))
-            {
-                FindAndTargetPlayer();
-            }
-            if (m_UpdateType == UpdateType.LateUpdate)
-            {
-                FollowTarget(Time.deltaTime);
-            }
-        }
-
-
-        public void ManualUpdate()
-        {
-            // we update from here if updatetype is set to Late, or in auto mode,
-            // if the target does not have a rigidbody, or - does have a rigidbody but is set to kinematic.
-            if (m_AutoTargetPlayer && (m_Target == null || !m_Target.gameObject.activeSelf))
-            {
-                FindAndTargetPlayer();
-            }
-            if (m_UpdateType == UpdateType.ManualUpdate)
-            {
-                FollowTarget(Time.deltaTime);
-            }
+            FollowTarget(delta);
         }
 
         protected abstract void FollowTarget(float deltaTime);
@@ -88,12 +45,10 @@ namespace GBAssets.CameraControl
             }
         }
 
-
         public virtual void SetTarget(Transform newTransform)
         {
             m_Target = newTransform;
         }
-
 
         public Transform Target
         {

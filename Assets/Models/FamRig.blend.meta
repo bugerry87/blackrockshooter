@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6166b5c338f852a479b0fc51a41305cb
-timeCreated: 1431647820
+timeCreated: 1455046008
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -193,7 +193,7 @@ ModelImporter:
     7400008: FamRig_WalkFw
     7400010: FamRig_Idle
     7400012: FamRig_Turn90L
-    7400014: FamRig_Idle2
+    7400014: FamRig_Equiped
     7400016: FamRig_NinjaFw
     7400018: FamRig_Head
     7400020: FamRig_Head_Dw
@@ -220,6 +220,22 @@ ModelImporter:
     7400062: FamRig_NinjaFwUp2
     7400064: FamRig_Stairs
     7400066: FamRig_HeavyShoot
+    7400068: FamRig_MartialHack
+    7400070: FamRig_MartialDash
+    7400072: FamRig_MartialStrike
+    7400074: FamRig_MartialDashPose
+    7400076: FamRig_MartialPose
+    7400078: FamRig_MartialSkirmish
+    7400080: FamRig_MartialPose2
+    7400082: FamRig_MartialSkirmish2
+    7400084: FamRig_MartialSmash
+    7400086: FamRig_MartialVortex
+    7400088: FamRig_MartialPunsh
+    7400090: FamRig_MartialStab
+    7400092: FamRig_MartialSmash2
+    7400094: FamRig_MartialDashPose
+    7400096: FamRig_MartialKick
+    7400098: FamRig_MartialDashPose
     9500000: //RootNode
     13700000: Body
     13700002: EyesPanel
@@ -245,13 +261,17 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'FamRig_MartialArts5' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Hand_R' has scale animation that will be
+      discarded.\n\t'Arm_001_L' has scale animation that will be discarded.\n\t'Hand_L'
+      has scale animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
-    animationRotationError: 0.1
-    animationPositionError: 0.1
-    animationScaleError: 0.1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths:
     - Armature/C_Root/C_Hip
@@ -576,8 +596,8 @@ ModelImporter:
     - serializedVersion: 16
       name: FamRig_Idle
       takeName: FamRig_Idle
-      firstFrame: 0
-      lastFrame: 59
+      firstFrame: 100
+      lastFrame: 139
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -631,7 +651,7 @@ ModelImporter:
       - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
         weight: 1
       - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
-        weight: 1
+        weight: 0
       - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
         weight: 1
       - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
@@ -671,7 +691,7 @@ ModelImporter:
       - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
         weight: 1
       - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
-        weight: 1
+        weight: 0
       - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
         weight: 1
       - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
@@ -701,39 +721,39 @@ ModelImporter:
       - path: Armature/C_Root/C_Hip/Leg_001_L
         weight: 1
       - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
-        weight: 1
+        weight: 0
       - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
         weight: 1
       - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
         weight: 1
       - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
-        weight: 1
+        weight: 0
       - path: Armature/C_Root/C_Hip/Leg_001_R
         weight: 1
       - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
-        weight: 1
+        weight: 0
       - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
         weight: 1
       - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
         weight: 1
       - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
-        weight: 1
+        weight: 0
       - path: BRBody
-        weight: 1
+        weight: 0
       - path: BRCoat
-        weight: 1
+        weight: 0
       - path: FamHead
-        weight: 1
+        weight: 0
       - path: Rattails
-        weight: 1
+        weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: FamRig_Idle2
+      name: FamRig_Equiped
       takeName: FamRig_Idle
-      firstFrame: 60
-      lastFrame: 189
+      firstFrame: 150
+      lastFrame: 155
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -741,7 +761,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -3070,10 +3090,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: FamRig_Stairs
-      takeName: FamRig_Stairs
+      name: FamRig_HeavyShoot
+      takeName: FamRig_HeavyShoot
       firstFrame: 0
-      lastFrame: 10
+      lastFrame: 2
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -3083,7 +3103,163 @@ ModelImporter:
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
-      loopBlendPositionY: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 1
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      - path: BRBody
+        weight: 0
+      - path: BRCoat
+        weight: 0
+      - path: FamHead
+        weight: 0
+      - path: Rattails
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_MartialHack
+      takeName: FamRig_MartialArts5
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
@@ -3226,8 +3402,320 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: FamRig_HeavyShoot
-      takeName: FamRig_HeavyShoot
+      name: FamRig_MartialDash
+      takeName: FamRig_MartialArts5
+      firstFrame: 170
+      lastFrame: 224
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      - path: BRBody
+        weight: 0
+      - path: BRCoat
+        weight: 0
+      - path: FamHead
+        weight: 0
+      - path: Rattails
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_MartialStrike
+      takeName: FamRig_MartialArts5
+      firstFrame: 45
+      lastFrame: 65
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      - path: BRBody
+        weight: 0
+      - path: BRCoat
+        weight: 0
+      - path: FamHead
+        weight: 0
+      - path: Rattails
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_MartialPose
+      takeName: FamRig_MartialArts1
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -3243,9 +3731,1101 @@ ModelImporter:
       loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 1
+      keepOriginalPositionXZ: 0
       heightFromFeet: 0
-      mirror: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      - path: BRBody
+        weight: 0
+      - path: BRCoat
+        weight: 0
+      - path: FamHead
+        weight: 0
+      - path: Rattails
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_MartialSmash
+      takeName: FamRig_MartialArts2
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      - path: BRBody
+        weight: 0
+      - path: BRCoat
+        weight: 0
+      - path: FamHead
+        weight: 0
+      - path: Rattails
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_MartialVortex
+      takeName: FamRig_MartialArts2
+      firstFrame: 50
+      lastFrame: 104
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      - path: BRBody
+        weight: 0
+      - path: BRCoat
+        weight: 0
+      - path: FamHead
+        weight: 0
+      - path: Rattails
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_MartialPunsh
+      takeName: FamRig_MartialArts3
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      - path: BRBody
+        weight: 0
+      - path: BRCoat
+        weight: 0
+      - path: FamHead
+        weight: 0
+      - path: Rattails
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_MartialSkirmish2
+      takeName: FamRig_MartialArts3
+      firstFrame: 34
+      lastFrame: 69
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      - path: BRBody
+        weight: 0
+      - path: BRCoat
+        weight: 0
+      - path: FamHead
+        weight: 0
+      - path: Rattails
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_MartialSmash2
+      takeName: FamRig_MartialArts4
+      firstFrame: 55
+      lastFrame: 115
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      - path: BRBody
+        weight: 0
+      - path: BRCoat
+        weight: 0
+      - path: FamHead
+        weight: 0
+      - path: Rattails
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_MartialDashPose
+      takeName: FamRig_MartialArts5
+      firstFrame: 170
+      lastFrame: 181
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      - path: BRBody
+        weight: 0
+      - path: BRCoat
+        weight: 0
+      - path: FamHead
+        weight: 0
+      - path: Rattails
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_MartialKick
+      takeName: FamRig_MartialArts5
+      firstFrame: 70
+      lastFrame: 114
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
@@ -3522,43 +5102,43 @@ ModelImporter:
     - boneName: Arm_001_R
       humanName: RightUpperArm
       limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
+        min: {x: -90, y: -100, z: -60}
+        max: {x: 90, y: 100, z: 100}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: Arm_002_L
       humanName: LeftLowerArm
       limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
+        min: {x: -135, y: 0, z: -60}
+        max: {x: 135, y: 0, z: 85}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: Arm_002_R
       humanName: RightLowerArm
       limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
+        min: {x: -135, y: 0, z: -60}
+        max: {x: 135, y: 0, z: 85}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: Hand_L
       humanName: LeftHand
       limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 130}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: Hand_R
       humanName: RightHand
       limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 130}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: Eye_L
       humanName: LeftEye
       limit:

@@ -8,6 +8,9 @@ namespace GBAssets.Character.ThirdPerson
 	[RequireComponent(typeof(Animator))]
 	public class GB_RigiTpPhysic : GB_ACharPhysic
 	{
+        public static readonly Vector3 XZ = new Vector3(1, 0, 1);
+		public const int MAX_SLOPLIMIT = 90;
+
         [Serializable]
         class HelperNames
         {
@@ -137,7 +140,7 @@ namespace GBAssets.Character.ThirdPerson
 
                 foreach (ContactPoint c in contacts)
                 {
-                    if(speed > 0 && other.gameObject.name.StartsWith(m_Helpers.push))
+                    if(speed > 0 && other.gameObject.tag.StartsWith(m_Helpers.push))
                     {
                         contactPoint = c.point;
                         contactNormal = c.normal;

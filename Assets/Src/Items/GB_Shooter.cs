@@ -15,7 +15,7 @@ namespace GBAssets.Items
 		}
 
 		[SerializeField]
-		GameObject prefab = null;
+		GameObject bullet = null;
 
 		[SerializeField]
 		float spread = 0;
@@ -52,30 +52,21 @@ namespace GBAssets.Items
 			}
 		}
 
+        //Spawn the bullet
 		public void ApplyShoot()
 		{
-			if (prefab != null)
+			if (bullet != null)
 			{
 				if (spread == 0)
 				{
-					Instantiate(prefab, transform.position + transform.TransformVector(offset), transform.rotation);
+					Instantiate(bullet, transform.position + transform.TransformVector(offset), transform.rotation);
 				}
 				else
 				{
 					Vector3 random = transform.forward + new Vector3(Random.Range(-spread, spread), Random.Range(-spread, spread), Random.Range(-spread, spread));
-					Instantiate(prefab, transform.position + transform.TransformVector(offset), Quaternion.LookRotation(random));
+					Instantiate(bullet, transform.position + transform.TransformVector(offset), Quaternion.LookRotation(random));
 				}
 			}
 		}
-
-        public void SpawnShooter()
-        {
-            animator.SetBool("Spawn", true);
-        }
-
-        public void DespawnShooter()
-        {
-            animator.SetBool("Spawn", false);
-        }
 	}
 }

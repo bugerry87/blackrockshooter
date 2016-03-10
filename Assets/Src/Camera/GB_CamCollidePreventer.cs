@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+
+//Obsolete!!!
 namespace GBAssets.CameraControl
 {
 	[RequireComponent(typeof(Camera))]

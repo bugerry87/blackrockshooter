@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GBAssets.CameraControl
 {
-    public abstract class GB_PivotBasedCameraRig : GB_ATargetFollower
+    public abstract class GB_APivotBasedCameraRig : GB_ATargetFollower
     {
         // This script is designed to be placed on the root object of a camera rig,
         // comprising 3 gameobjects, each parented to the next:
