@@ -1,9 +1,8 @@
 using UnityEngine;
-using GBAssets.EventSystems;
 
-namespace GBAssets.Character.ThirdPerson
+namespace GBAssets.EventSystems
 {
-	public class GB_RigiTpMessenger : GB_ACharState<GB_RigiTpPhysic>
+	public class GB_AniMessenger : StateMachineBehaviour 
 	{
         [SerializeField] protected string[] enterMessages = null;
         [SerializeField] protected string[] exitMessages = null;

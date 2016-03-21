@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 namespace GBAssets.EventSystems
 {
-    public sealed class GB_MessageEvent : MonoBehaviour, IEventSystemHandler, ISelectHandler, IDeselectHandler, GB_IMessageHandler
+    public sealed class GB_MessageEvent : MonoBehaviour, GB_IMessageHandler
     {
         static Action<string> emitter = null;
 
@@ -14,7 +14,7 @@ namespace GBAssets.EventSystems
         {
             if(emitter != null)
             {
-                emitter.Invoke(message);
+                emitter(message);
             }
             else
             {
@@ -48,8 +48,10 @@ namespace GBAssets.EventSystems
             {
                 if(MESSAGE_REGISTER.ContainsKey(entry.message))
                 {
+#if UNITY_EDITOR
                     Debug.LogWarning("There is already a trigger on " + entry.message);
-                }
+#endif
+				}
                 else
                 {
                     MESSAGE_REGISTER.Add(entry.message, entry.callback);
@@ -57,24 +59,21 @@ namespace GBAssets.EventSystems
             }
         }
 
-        public void OnSelect(BaseEventData data)
-        {
-            Debug.Log("Selected");
-        }
-
-        public void OnDeselect(BaseEventData data)
-        {
-            Debug.Log("Deselected");
-        }
+		void OnDestroy()
+		{
+			emitter -= OnMessage;
+		}
 
         public void OnMessage(string message)
         {
-            MessageTrigger trigger;
-            if(MESSAGE_REGISTER.TryGetValue(message, out trigger))
-            {
-                Debug.Log("Emit:" + message);
-                trigger.Invoke();
-            }
-        }
+			if (isActiveAndEnabled)
+			{
+				MessageTrigger trigger;
+				if(MESSAGE_REGISTER.TryGetValue(message, out trigger))
+				{
+					trigger.Invoke();
+				}
+			}
+        }		
     }
 }

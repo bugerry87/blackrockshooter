@@ -26,6 +26,7 @@ namespace GBAssets.Character
 		public float speed { get; protected set; }
 
 		//Environment
+		public GameObject contactObject { get; protected set; }
 		public Vector3 contactPoint { get; protected set; }
 		public Vector3 contactNormal { get; protected set; }
 		public float up { get; protected set; }

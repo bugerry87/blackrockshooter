@@ -73,7 +73,6 @@ namespace GBAssets.Character.ThirdPerson
 			contactNormal = Vector3.up;
 			m_CapsuleHeight = m_Capsule.height;
 			m_CapsuleCenter = m_Capsule.center;
-            MatchTarget = DoMatchTarget;
 		}
 
         void Awake()
@@ -92,9 +91,9 @@ namespace GBAssets.Character.ThirdPerson
             if (!contact)
                 movement = Vector3.Scale(move.sqrMagnitude > 1f ? move.normalized : move, XZ);
             else if (up < wallup_limit)
-				movement = Vector3.Scale(Vector3.ProjectOnPlane(move.magnitude > 1f ? move.normalized : move, contactNormal), XZ);
+				movement = Vector3.Scale(Vector3.ProjectOnPlane(move.sqrMagnitude > 1f ? move.normalized : move, contactNormal), XZ);
 			else
-                movement = Vector3.Scale(Vector3.Project(move.magnitude > 1f ? move.normalized : move, -contactNormal), XZ);
+                movement = Vector3.Scale(Vector3.Project(move.sqrMagnitude > 1f ? move.normalized : move, -contactNormal), XZ);
 
 #if UNITY_EDITOR
             // helper to visualise the ground check ray in the scene view
@@ -133,6 +132,7 @@ namespace GBAssets.Character.ThirdPerson
 
 		void OnCollisionStay(Collision other)
 		{
+			contactObject = other.gameObject;
             if (other.gameObject.layer != 8)
             {
                 ContactPoint[] contacts = other.contacts;
@@ -140,7 +140,7 @@ namespace GBAssets.Character.ThirdPerson
 
                 foreach (ContactPoint c in contacts)
                 {
-                    if(speed > 0 && other.gameObject.tag.StartsWith(m_Helpers.push))
+                    if(speed > 0 && contactObject.tag.StartsWith(m_Helpers.push))
                     {
                         contactPoint = c.point;
                         contactNormal = c.normal;
@@ -220,7 +220,7 @@ namespace GBAssets.Character.ThirdPerson
 			{
                 if (contact)
                 {
-                    //jumpLeg = 0;
+                    //ignore
                 }
                 else
                 {
@@ -234,6 +234,7 @@ namespace GBAssets.Character.ThirdPerson
 			{
 				if(applyAirControl || applyJump || sliding)
 				{
+					//ignore
 				}
 				else if(grounded && !contact)
 				{
@@ -294,15 +295,6 @@ namespace GBAssets.Character.ThirdPerson
             Debug.DrawRay(pos, Vector3.down, Color.red);
 #endif
             return Physics.Raycast(ray, out grab, height * m_GrabRange, 1) && grab.normal.y > grab_edge;
-        }
-
-        public Action<Animator, int, AvatarTarget, MatchTargetWeightMask> MatchTarget = null;
-        private void DoMatchTarget(Animator animator, int layerIndex, AvatarTarget target, MatchTargetWeightMask mask)
-        {
-            if (!animator.IsInTransition(layerIndex))
-            {
-                animator.MatchTarget(grab.point, Quaternion.identity, target, mask, 0, 1);
-            }
         }
     }
 }

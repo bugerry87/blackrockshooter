@@ -23,6 +23,8 @@ namespace GBAssets.Character.ThirdPerson
 		
 		[SerializeField] Parameters parameters = new Parameters();
 		[Range(0f, 10f)][SerializeField] float sensity = 0.1f;
+		[SerializeField] float explosion = 500;
+		[SerializeField] float range = 10;
 
 		 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 		override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -30,6 +32,11 @@ namespace GBAssets.Character.ThirdPerson
 			if(HasPhysics(animator))
 			{
                 physic.applyJump = true;
+				var rig = physic.contactObject.GetComponent<Rigidbody>();
+				if(rig != null)
+				{
+					rig.AddExplosionForce(explosion, animator.transform.position, range);
+				}
 			}
 		}
 
