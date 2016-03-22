@@ -9,6 +9,8 @@ namespace GBAssets.Character.AI
 	[RequireComponent(typeof (GB_AdoptedTarget))]
 	public class GB_AI : MonoBehaviour
 	{
+		public const string ATTACK = "ATTACK";
+
 		[Serializable]
 		protected class Parameters
 		{
@@ -27,20 +29,21 @@ namespace GBAssets.Character.AI
 		[Range(0f, 1f)][SerializeField] protected float precision = 0.5f;
 		[Range(0f, 1f)][SerializeField] protected float malignity = 0.5f;
 		[Range(0, 10)][SerializeField] protected int rotSpeed = 5;
-
 		[SerializeField] protected float minDistance = 4;
+		[SerializeField] protected int cooldown = 500;
 
 		public GB_AdoptedTarget target { get; private set; }
 		public NavMeshAgent agent { get; private set; }
 		public Animator animator { get; private set; }
 		public Rigidbody rig { get; private set; }
-
-		public bool ApplyAttack{ get; set; }
+		public GB_ActionScheduler scheduler { get; protected set; }
+		bool attack { get; set; }
 
 		protected float sqrDist = 0;
 
 		protected virtual void Start()
 		{
+			scheduler = ScriptableObject.CreateInstance<GB_ActionScheduler>();
 			target = GetComponent<GB_AdoptedTarget>();
 			agent = GetComponent<NavMeshAgent>();
 			animator = GetComponent<Animator>();
@@ -54,7 +57,7 @@ namespace GBAssets.Character.AI
 			animator.SetFloat(parameters.right, 0, sensity, Time.deltaTime);
 			animator.ResetTrigger(parameters.attack);
 			transform.rotation = animator.rootRotation;
-			ApplyAttack = false;
+			StopAttack();
 		}
 
 		protected virtual void Follow()
@@ -79,7 +82,7 @@ namespace GBAssets.Character.AI
 				animator.SetBool(parameters.jump, agent.isOnOffMeshLink);
 				animator.ResetTrigger(parameters.attack);
 				transform.rotation = animator.rootRotation;
-				ApplyAttack = false;
+				StopAttack();
 			}
 			else
 			{
@@ -123,9 +126,16 @@ namespace GBAssets.Character.AI
 			animator.SetFloat(parameters.right, right, sensity, Time.deltaTime);
 			animator.SetBool(parameters.jump, agent.isOnOffMeshLink);
 
-			if(!agent.isOnOffMeshLink && (ApplyAttack || back > malignity) && forward > precision)
+			if(!agent.isOnOffMeshLink && (attack || back > malignity) && forward > precision)
 			{
-				animator.SetTrigger(parameters.attack);
+				if (attack)
+				{
+					animator.SetTrigger(parameters.attack);
+				}
+				else
+				{
+					RequestAttack();
+				}
 			}
 			else
 			{
@@ -148,6 +158,26 @@ namespace GBAssets.Character.AI
 			{
 				Manace();
 			}
+		}
+
+		public void RequestAttack()
+		{
+			scheduler.Request(ATTACK, DoAttack, cooldown, StopAttack);
+		}
+
+		public void DoAttack()
+		{
+			attack = true;
+		}
+
+		public void StopAttack()
+		{
+			attack = false;
+		}
+
+		public void StopAttack(IAsyncResult result)
+		{
+			attack = false;
 		}
 
 		protected virtual void OnAnimatorMove()
