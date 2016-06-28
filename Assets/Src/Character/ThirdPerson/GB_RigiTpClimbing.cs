@@ -6,14 +6,21 @@ namespace GBAssets.Character.ThirdPerson
 	public sealed class GB_RigiTpClimbing : GB_ACharState<GB_RigiTpPhysic>
 	{
 		[Serializable]
-		class Parameters
+		struct Parameters
 		{
-            [SerializeField]
             public string
-                forward = "Forward",
-                up = "Up",
-                grab = "Grab",
-                climb = "Climb";
+                forward,
+                up,
+                grab,
+                climb;
+
+			public Parameters(string forward = "Forward", string up = "Up", string grab = "Grab", string climb = "Climb")
+			{
+				this.forward = forward;
+				this.up = up;
+				this.grab = grab;
+				this.climb = climb;
+			}
 		}
 
         [SerializeField]

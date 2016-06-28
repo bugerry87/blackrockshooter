@@ -6,22 +6,34 @@ namespace GBAssets.Character.AI
 {
 	[RequireComponent(typeof (NavMeshAgent))]
 	[RequireComponent(typeof (Animator))]
-	[RequireComponent(typeof (GB_AdoptedTarget))]
-	public class GB_AI : MonoBehaviour
+	public class GB_AI : GB_AdoptedTarget
 	{
-		public const string ATTACK = "ATTACK";
+		public const string ATTACK_LOCK = "ATTACK";
+
+		protected static Action<GameObject> Attack;
 
 		[Serializable]
-		protected class Parameters
+		protected struct Parameters
 		{
-			[SerializeField]
 			public string
-				forward = "Forward",
-				turn = "Turn",
-				right = "Right",
-				crouch = "Crouch",
-				jump = "Jump",
-				attack = "Attack";
+				forward,
+				turn,
+				right,
+				crouch,
+				jump,
+				attack,
+				demage;
+
+			public Parameters(string forward = "Forward", string turn = "Turn", string right = "Right", string crouch = "Crouch", string jump = "Jump", string attack = "Attack", string demage = "Demage")
+			{
+				this.forward = forward;
+				this.turn = turn;
+				this.right = right;
+				this.crouch = crouch;
+				this.jump = jump;
+				this.attack = attack;
+				this.demage = demage;
+			}
 		}
 
 		[SerializeField] protected Parameters parameters = new Parameters();
@@ -30,21 +42,22 @@ namespace GBAssets.Character.AI
 		[Range(0f, 1f)][SerializeField] protected float malignity = 0.5f;
 		[Range(0, 10)][SerializeField] protected int rotSpeed = 5;
 		[SerializeField] protected float minDistance = 4;
-		[SerializeField] protected int cooldown = 500;
+		[SerializeField] protected int requestCooldown = 500;
+		[SerializeField] protected int attackCooldown = 500;
 
-		public GB_AdoptedTarget target { get; private set; }
 		public NavMeshAgent agent { get; private set; }
 		public Animator animator { get; private set; }
 		public Rigidbody rig { get; private set; }
 		public GB_ActionScheduler scheduler { get; protected set; }
+		public bool ko { get; set; }
 		bool attack { get; set; }
 
 		protected float sqrDist = 0;
 
 		protected virtual void Start()
 		{
+			Attack += RequestAttack;
 			scheduler = ScriptableObject.CreateInstance<GB_ActionScheduler>();
-			target = GetComponent<GB_AdoptedTarget>();
 			agent = GetComponent<NavMeshAgent>();
 			animator = GetComponent<Animator>();
 			rig = GetComponent<Rigidbody>();
@@ -62,7 +75,7 @@ namespace GBAssets.Character.AI
 
 		protected virtual void Follow()
 		{
-			agent.SetDestination(target.adopted.position);
+			agent.SetDestination(target.position);
 			var path = agent.path;
 
 			if(path.corners.Length >= 2)
@@ -94,14 +107,16 @@ namespace GBAssets.Character.AI
 				Debug.DrawLine(path.corners[i], path.corners[i+1], Color.red);
 #endif
 		}
-
+		
 		protected virtual void Manace()
 		{
-			Vector3 dir = (target.adopted.position - animator.transform.position).normalized;
+			Vector3 dir = Vector3.ProjectOnPlane(target.position - animator.transform.position, Vector3.up);
+			dir = dir == Vector3.zero ? transform.forward : dir.normalized;
+
 			float forward = Vector3.Dot(animator.transform.forward, dir);
 			float turn = Vector3.Dot(animator.transform.right, dir);
-			float back = Vector3.Dot(target.adopted.forward, animator.transform.forward);
-			float right = Vector3.Dot(target.adopted.right, animator.transform.forward);
+			float back = Vector3.Dot(target.forward, animator.transform.forward);
+			float right = Vector3.Dot(target.right, animator.transform.forward);
 
 			if(forward < 0)
 			{
@@ -134,7 +149,7 @@ namespace GBAssets.Character.AI
 				}
 				else
 				{
-					RequestAttack();
+					RequestAttack(target);
 				}
 			}
 			else
@@ -146,11 +161,11 @@ namespace GBAssets.Character.AI
 
 		protected virtual void DoUpdate()
 		{
-			if (target.adopted == null)
+			if (target == null)
 			{
 				Idle();
 			}
-			else if ((sqrDist = (animator.transform.position - target.adopted.position).sqrMagnitude) > agent.stoppingDistance * agent.stoppingDistance)
+			else if ((sqrDist = (animator.transform.position - target.position).sqrMagnitude) > agent.stoppingDistance * agent.stoppingDistance)
 			{
 				Follow();
 			}
@@ -158,11 +173,25 @@ namespace GBAssets.Character.AI
 			{
 				Manace();
 			}
+			animator.SetFloat(parameters.demage, 0, sensity, Time.deltaTime);
 		}
 
-		public void RequestAttack()
+		public void RequestAttack(GameObject source)
 		{
-			scheduler.Request(ATTACK, DoAttack, cooldown, StopAttack);
+			RequestAttack(source.transform);
+		}
+
+		public void RequestAttack(Transform source)
+		{
+			if (source == target)
+			{
+				RequestAttack();
+			}
+		}
+
+		public void RequestAttack(IAsyncResult result = null)
+		{
+			scheduler.Request(ATTACK_LOCK, DoAttack, attackCooldown, StopAttack);
 		}
 
 		public void DoAttack()
@@ -170,20 +199,41 @@ namespace GBAssets.Character.AI
 			attack = true;
 		}
 
-		public void StopAttack()
+		public void StopAttack(IAsyncResult result = null)
 		{
 			attack = false;
 		}
 
-		public void StopAttack(IAsyncResult result)
+		public bool IsAlly(Transform other)
 		{
-			attack = false;
+			return other && other.tag == tag;
 		}
 
 		protected virtual void OnAnimatorMove()
 		{
-			DoUpdate();
+			if(!ko) DoUpdate();
 			agent.velocity = animator.deltaPosition / Time.deltaTime;
+		}
+
+		protected override void OnTriggerStay(Collider other)
+		{
+			if (target == null && IsAlly(other.transform))
+			{
+				GB_AdoptedTarget adopted = other.GetComponent<GB_AdoptedTarget>();
+				if(adopted && adopted.target)
+				{
+					target = adopted.target;
+				}
+			}
+			else
+			{
+				base.OnTriggerStay(other);
+			}
+		}
+
+		protected virtual void OnDestroy()
+		{
+			Attack -= RequestAttack;
 		}
 	}
 }

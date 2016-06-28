@@ -10,7 +10,6 @@ namespace GBAssets.CameraControl
 
         protected Rigidbody targetRigidbody;
 
-
         protected virtual void Start()
         {
             // if auto targeting is used, find the object tagged "Player"
@@ -33,12 +32,11 @@ namespace GBAssets.CameraControl
         }
 
         protected abstract void FollowTarget(float deltaTime);
-
-
+		
         public void FindAndTargetPlayer()
         {
             // auto target an object tagged player, if no target has been assigned
-            var targetObj = GameObject.FindGameObjectWithTag("Player");
+            var targetObj = GameObject.FindWithTag("Player");
             if (targetObj)
             {
                 SetTarget(targetObj.transform);

@@ -34,7 +34,7 @@ namespace GBAssets.Character.ThirdPerson
 		{
 			if(HasPhysics(animator))
 			{
-				physic.applyTurn = true;
+				physic.applyTurn = physic.def < 0.5f;
 				physic.applyMove = true;
 				physic.fixGrounding = true;
 				physic.applyGravity = true;

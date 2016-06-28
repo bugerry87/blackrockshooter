@@ -12,13 +12,19 @@ namespace GBAssets.Character.ThirdPerson
 		public const int MAX_SLOPLIMIT = 90;
 
         [Serializable]
-        class HelperNames
+        struct HelperNames
         {
-            [SerializeField]
             public string
-                wall = "WallHelper",
-                grab = "GrabHelper",
-                push = "PushAble";
+                wall,
+                grab,
+                push;
+
+			public HelperNames(string wall = "WallHelper", string grab = "GrabHelper", string push = "PushAble")
+			{
+				this.wall = wall;
+				this.grab = grab;
+				this.push = push;
+			}
         }
 
         [SerializeField] HelperNames m_Helpers = new HelperNames();
@@ -133,27 +139,24 @@ namespace GBAssets.Character.ThirdPerson
 		void OnCollisionStay(Collision other)
 		{
 			contactObject = other.gameObject;
-            if (other.gameObject.layer != 8)
+            ContactPoint[] contacts = other.contacts;
+            Vector3 pos = transform.position + movement * m_Offset;
+
+            foreach (ContactPoint c in contacts)
             {
-                ContactPoint[] contacts = other.contacts;
-                Vector3 pos = transform.position + movement * m_Offset;
-
-                foreach (ContactPoint c in contacts)
+                if(speed > 0 && contactObject.tag.StartsWith(m_Helpers.push))
                 {
-                    if(speed > 0 && contactObject.tag.StartsWith(m_Helpers.push))
-                    {
-                        contactPoint = c.point;
-                        contactNormal = c.normal;
-                        break;
-                    }
-                    else if (c.normal.y >= 0 && (c.point - pos).sqrMagnitude < (contactPoint - pos).sqrMagnitude)
-                    {
-                        contactPoint = c.point;
-                        contactNormal = c.normal;
-                    }
-
-                    grounded |= c.normal.y > slope_limit;
+                    contactPoint = c.point;
+                    contactNormal = c.normal;
+                    break;
                 }
+                else if (c.normal.y >= 0 && (c.point - pos).sqrMagnitude < (contactPoint - pos).sqrMagnitude)
+                {
+                    contactPoint = c.point;
+                    contactNormal = c.normal;
+                }
+
+                grounded |= c.normal.y > slope_limit;
             }
             contact = true;
 		}
@@ -220,7 +223,7 @@ namespace GBAssets.Character.ThirdPerson
 			{
                 if (contact)
                 {
-                    //ignore
+					sliding = true;
                 }
                 else
                 {

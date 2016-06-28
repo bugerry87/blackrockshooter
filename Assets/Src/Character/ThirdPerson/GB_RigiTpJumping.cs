@@ -59,7 +59,7 @@ namespace GBAssets.Character.ThirdPerson
 
 				animator.SetBool(parameters.ground, physic.grounded);
 				animator.SetBool(parameters.slide, physic.sliding);
-				animator.SetBool(parameters.contact, physic.skinContact);
+				animator.SetBool(parameters.contact, physic.skinContact); //physic.skinContact
 
                 animator.SetBool(parameters.grab, physic.CheckEdge());
                 animator.SetFloat(parameters.climb, physic.grab.distance);

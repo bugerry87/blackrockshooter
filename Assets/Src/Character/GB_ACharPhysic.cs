@@ -16,7 +16,7 @@ namespace GBAssets.Character
 		public bool walk { get; set; }
 		public bool crouch { get; set; }
 		public float focus { get; set; }
-		public float fire { get; set; }
+		public float def { get; set; }
 
 		//Movement
 		public Vector3 movement { get; protected set; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using GBAssets.Utils;
 
 namespace GBAssets.Character.ThirdPerson
 {
@@ -12,15 +13,16 @@ namespace GBAssets.Character.ThirdPerson
 			public string
 				action1 = "Action1",
                 action2 = "Action2",
-                hold = "Hold";
+                hold = "Hold",
+				def = "Def";
 		}
 
         [SerializeField] Parameters parameters = new Parameters();
-
+		[Range(0f, 10f)][SerializeField] float sensity = 0.1f;
+		
         private bool hold = false;
 
-	    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-	    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+		override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 	        if(HasPhysics(animator))
 			{
                 if(hold)
@@ -35,8 +37,10 @@ namespace GBAssets.Character.ThirdPerson
                 {
                     animator.SetTrigger(parameters.action2);
                 }
-                hold = physic.action1 || physic.action2;
-                animator.SetBool(parameters.hold, physic.action1 || physic.action2);             
+				
+				hold = physic.action1 || physic.action2;
+                animator.SetBool(parameters.hold, physic.action1 != physic.action2);
+				animator.SetFloat(parameters.def, physic.def, sensity, Time.deltaTime);            
 			}
 	    }
     }

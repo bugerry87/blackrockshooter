@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
+using GBAssets.EventSystems;
 
 namespace GBAssets.Utils
 {
 
 	public class GB_AdoptedTarget : MonoBehaviour 
 	{
-
 		[SerializeField] Transform m_target = null;
 		[SerializeField] string m_searchTag = null;
+		[SerializeField] GB_TransformEvent emitTarget;
 
-		public Transform adopted { get{ return m_target; } set{ m_target = value; } }
-		public string searchTag { get{ return m_searchTag; } private set{ this.m_searchTag = value; } }
+		public Transform target { get{ return m_target; } set{ m_target = value; } }
+		public string searchTag { get{ return m_searchTag; } private set{ m_searchTag = value; } }
 
 		public void SetSearchTag(string tag)
 		{
@@ -21,34 +22,36 @@ namespace GBAssets.Utils
 			searchTag = tag;
 		}
 
-		bool IsTarget(GameObject t)
+		public bool IsTarget(Transform t)
 		{
-			return searchTag != null && t.tag == searchTag;
+			return searchTag != null && t && t.tag == searchTag;
 		}
 
-		void Awake ()
+		protected virtual void Awake ()
 		{
 			if (searchTag == null) enabled = false;
 		}
 
-		void OnTriggerStay(Collider other)
+		protected virtual void OnTriggerStay(Collider other)
 		{
-			if(!IsTarget(other.gameObject))
+			if(!IsTarget(other.transform))
 			{
 				//escape
 			} 
-			else if(adopted != null)
+			else if(target != null)
 			{
 				float dist1 = (other.transform.position - transform.position).sqrMagnitude;
-				float dist2 = (adopted.position - transform.position).sqrMagnitude;
-				if(dist1 < dist2)
+				float dist2 = (target.position - transform.position).sqrMagnitude;
+				if(dist1 < dist2 && target != other.transform)
 				{
-					adopted = other.transform;
+					target = other.transform;
+					emitTarget.Invoke(target);
 				}
 			}
 			else
 			{
-				adopted = other.transform;
+				target = other.transform;
+				emitTarget.Invoke(target);
 			}
 		}
 	}

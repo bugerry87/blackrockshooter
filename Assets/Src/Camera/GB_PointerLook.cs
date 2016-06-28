@@ -46,7 +46,7 @@ namespace GBAssets.CameraControl
 			}
             */
 
-            if (target && target.adopted || disableButton.Length != 0 && (Input.GetButton(disableButton) || Mathf.Abs(Input.GetAxis(disableButton)) > 0))
+            if (target && target.target || disableButton.Length != 0 && (Input.GetButton(disableButton) || Mathf.Abs(Input.GetAxis(disableButton)) > 0))
 			{
 				//DoNothing
 			}

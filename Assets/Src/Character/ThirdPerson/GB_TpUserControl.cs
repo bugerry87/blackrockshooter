@@ -11,20 +11,20 @@ namespace GBAssets.Character.ThirdPerson
 		[SerializeField] string m_JumpButton = "Jump";
 		[SerializeField] string m_WalkButton = "Walk";
 		[SerializeField] string m_CrouchButton = "Crouch";
-        [SerializeField] string m_FireButton1 = "Fire1";
-        [SerializeField] string m_FireButton2 = "Fire2";
         [SerializeField] string m_ActionButton1 = "Action1";
         [SerializeField] string m_ActionButton2 = "Action2";
-
-		public GB_ACharPhysic tp_physic { get; private set; } 	// A reference to the ThirdPersonCharacter on the object
-		public Vector3 forward { get; private set; }             		// The current forward direction of the camera
+        [SerializeField] string m_FocusButton = "Focus";
+        [SerializeField] string m_DefButton = "Def";
+		
+		public GB_ACharPhysic tp_physic { get; private set; }
+		public Vector3 forward { get; private set; }             		
 		public Vector3 move { get; private set; }
 		public float h { get; private set; }
 		public float v { get; private set; }
 		public bool jump { get; private set; }
 		public bool crouch { get; private set; }
 		public bool walk { get; private set; }
-        public float fire { get; private set; }
+        public float def { get; private set; }
         public float focus { get; private set; }
         public bool actionX { get; private set; }
         public bool actionY { get; private set; }
@@ -51,8 +51,8 @@ namespace GBAssets.Character.ThirdPerson
 			jump = Input.GetButtonDown(m_JumpButton) || Input.GetAxis(m_JumpButton) != 0; 
 			crouch = Input.GetButton(m_CrouchButton) || Input.GetAxis(m_CrouchButton) != 0;
 			walk = Input.GetButton(m_WalkButton) || Input.GetAxis(m_WalkButton) != 0;
-            fire = Input.GetButton(m_FireButton1) ? 1 : Input.GetAxis(m_FireButton1);
-            focus = Input.GetButton(m_FireButton2) ? 1 : Input.GetAxis(m_FireButton2);
+            def = Input.GetButton(m_DefButton) ? 1 : Input.GetAxis(m_DefButton);
+            focus = Input.GetButton(m_FocusButton) ? 1 : Input.GetAxis(m_FocusButton);
             actionX = Input.GetButton(m_ActionButton1) || Input.GetAxis(m_ActionButton1) != 0;
             actionY = Input.GetButton(m_ActionButton2) || Input.GetAxis(m_ActionButton2) != 0;
 
@@ -74,7 +74,7 @@ namespace GBAssets.Character.ThirdPerson
 			tp_physic.crouch = crouch;
 			tp_physic.walk = walk;
 			tp_physic.jump |= jump;
-            tp_physic.fire = fire;
+            tp_physic.def = def;
             tp_physic.focus = focus;
             tp_physic.action1 = actionX;
             tp_physic.action2 = actionY;

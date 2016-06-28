@@ -13,6 +13,7 @@ namespace GBAssets.Character.ThirdPerson
 			[SerializeField] public string ground = "Ground";
 			[SerializeField] public string contact = "Contact";
             [SerializeField] public string focus = "Focus";
+			[SerializeField] public string turn = "Turn";
 		}
 
 		[SerializeField] Parameters parameters = new Parameters();
@@ -31,6 +32,7 @@ namespace GBAssets.Character.ThirdPerson
 				animator.SetBool(parameters.slide, physic.sliding);
                 animator.SetBool(parameters.contact, physic.skinContact);
                 animator.SetFloat(parameters.focus, physic.focus, sensity, Time.deltaTime);
+				animator.SetFloat(parameters.turn, physic.turnAmount, sensity, Time.deltaTime);
 			}
 		}
 

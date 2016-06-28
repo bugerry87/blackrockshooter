@@ -6,14 +6,16 @@ namespace GBAssets.Utils
 {
 	public class GB_ActionScheduler : ScriptableObject
 	{
-		protected readonly Action<string, Action, int> locker;
-
-		protected GB_ActionScheduler() : base()
+		protected static readonly Action<object, Action, int> locker = (object key, Action action, int cooldown) =>
 		{
-			locker = DoLock;
-		}
+			lock (key)
+			{
+				if(action != null) action();
+				Thread.Sleep(cooldown);
+			}
+		};
 
-		public void Request(string key, Action action, int cooldown = 0, AsyncCallback callback = null)
+		public void Request(object key, Action action, int cooldown = 0, AsyncCallback callback = null)
 		{
 			if (Monitor.TryEnter(key))
 			{
@@ -28,18 +30,9 @@ namespace GBAssets.Utils
 			}
 		}
 
-		public void Queue(string key, Action action, int cooldown = 0, AsyncCallback callback = null)
+		public void Queue(object key, Action action, int cooldown = 0, AsyncCallback callback = null)
 		{
 			locker.BeginInvoke(key, action, cooldown, callback, null);
-		}
-
-		protected void DoLock(string key, Action action, int cooldown)
-		{
-			lock (key)
-			{
-				action();
-				Thread.Sleep(cooldown);
-			}
 		}
 	}
 }

@@ -6,14 +6,31 @@ namespace GBAssets.Character.ThirdPerson
 	public class GB_RigiTpCrouching : GB_ACharState<GB_RigiTpPhysic>
 	{
 		[Serializable]
-		class Parameters
+		struct Parameters
 		{
-			[SerializeField] public string forward = "Forward";
-			[SerializeField] public string turn = "Turn";
-			[SerializeField] public string crouch = "Crouch";
-			[SerializeField] public string slide = "Slide";
-			[SerializeField] public string ground = "Ground";
-			[SerializeField] public string contact = "Contact";
+			public string
+				forward,
+				turn,
+				crouch,
+				slide,
+				ground,
+				contact;
+
+			public Parameters(
+				string forward = "Forward",
+				string turn = "Turn",
+				string crouch = "Crouch",
+				string slide = "Slide",
+				string ground = "Ground",
+				string contact = "Contact")
+			{
+				this.forward = forward;
+				this.turn = turn;
+				this.crouch = crouch;
+				this.slide = slide;
+				this.ground = ground;
+				this.contact = contact;
+			}
 		}
 
 		[SerializeField] Parameters parameters = new Parameters();

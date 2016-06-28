@@ -5,12 +5,13 @@ namespace GBAssets.Utils
 	public class GB_SimpleFollower : GB_AdoptedTarget
 	{
 		[SerializeField] UpdateType updateType = UpdateType.FixedUpdate;
+		[SerializeField] float maxSpeed = 1f;
 
         void Update()
 		{
 			if(updateType == UpdateType.Update)
 			{
-				DoUpdate();
+				DoUpdate(Time.deltaTime);
 			}
 		}
 
@@ -18,7 +19,7 @@ namespace GBAssets.Utils
 		{
 			if(updateType == UpdateType.FixedUpdate)
 			{
-				DoUpdate();
+				DoUpdate(Time.fixedDeltaTime);
 			}
 		}
 
@@ -26,21 +27,22 @@ namespace GBAssets.Utils
 		{
 			if(updateType == UpdateType.LateUpdate)
 			{
-				DoUpdate();
+				DoUpdate(Time.deltaTime);
 			}
 		}
 
-        public void ManualUpdate()
+        public void ManualUpdate(float delta)
 		{
 			if(updateType == UpdateType.ManualUpdate)
 			{
-				DoUpdate();
+				DoUpdate(delta);
 			}
 		}
 
-		void DoUpdate()
+		void DoUpdate(float delta)
 		{
-			transform.position = adopted.position;
+			transform.position = Vector3.Lerp(transform.position, target.position, maxSpeed * delta);
+			transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, maxSpeed * delta);
 		}
 	}
 }

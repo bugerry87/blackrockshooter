@@ -184,6 +184,8 @@ ModelImporter:
     - Armature/C_Root/C_Hip/C_Back/Chest
     - Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L/Eye_L_END
     - Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R/Eye_R_END
+    - Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+    - Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
     clipAnimations: []
     isReadable: 1
   meshes:
