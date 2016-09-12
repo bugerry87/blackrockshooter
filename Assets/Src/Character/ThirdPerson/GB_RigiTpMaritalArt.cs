@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using GBAssets.Utils;
+using GBAssets.Character.AI;
 
 namespace GBAssets.Character.ThirdPerson
 {
@@ -32,10 +32,12 @@ namespace GBAssets.Character.ThirdPerson
                 else if(physic.action1)
                 {
                     animator.SetTrigger(parameters.action1);
+					GB_AI.InvokeAttack(animator.gameObject);		
                 }
                 else if(physic.action2)
                 {
                     animator.SetTrigger(parameters.action2);
+					GB_AI.InvokeAttack(animator.gameObject);	
                 }
 				
 				hold = physic.action1 || physic.action2;

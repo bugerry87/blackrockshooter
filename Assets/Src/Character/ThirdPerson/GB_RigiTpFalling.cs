@@ -8,13 +8,15 @@ namespace GBAssets.Character.ThirdPerson
 		[Serializable]
 		class Parameters
 		{
-			[SerializeField] public string forward = "Forward";
-			[SerializeField] public string turn = "Turn";
-			[SerializeField] public string fall = "Fall";
-			[SerializeField] public string jumpLeg = "JumpLeg";
-			[SerializeField] public string slide = "Slide";
-			[SerializeField] public string ground = "Ground";
-			[SerializeField] public string contact = "Contact";
+			[SerializeField]
+			public string 
+				forward = "Forward",
+				turn = "Turn",
+				fall = "Fall",
+				jumpLeg = "JumpLeg",
+				slide = "Slide",
+				ground = "Ground",
+				contact = "Contact";
 		}
 		
 		[SerializeField] Parameters parameters = new Parameters();

@@ -10,7 +10,15 @@ namespace GBAssets.Character.AI
 	{
 		public const string ATTACK_LOCK = "ATTACK";
 
-		protected static Action<GameObject> Attack;
+		protected static event Action<GameObject> Attack;
+
+		public static void InvokeAttack(GameObject go)
+		{
+			if (Attack != null)
+			{
+				Attack(go);
+			}
+		}
 
 		[Serializable]
 		protected struct Parameters

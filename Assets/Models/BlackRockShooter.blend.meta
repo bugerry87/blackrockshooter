@@ -85,6 +85,9 @@ ModelImporter:
     100154: Rattails
     100156: Rattails2
     100158: UniChanHead
+    100160: BRS_Tails
+    100162: ShoujoHead
+    100164: BRTails
     400000: //RootNode
     400002: Arm_001_L
     400004: Arm_001_R
@@ -165,6 +168,9 @@ ModelImporter:
     400154: Rattails
     400156: Rattails2
     400158: UniChanHead
+    400160: BRS_Tails
+    400162: ShoujoHead
+    400164: BRTails
     2300000: Body
     2300002: EyesPanel
     2300004: Hair
@@ -192,6 +198,9 @@ ModelImporter:
     4300024: BRCoat
     4300026: UniChanHead
     4300028: Rattails2
+    4300030: ShoujoHead
+    4300032: BRS_Tails
+    4300034: BRTails
     7400000: Default Take
     7400002: PoseLib_001
     7400004: FamRigWalk_Fw
@@ -258,6 +267,9 @@ ModelImporter:
     13700024: Rattails
     13700026: Rattails2
     13700028: UniChanHead
+    13700030: BRS_Tails
+    13700032: ShoujoHead
+    13700034: BRTails
   materials:
     importMaterials: 0
     materialName: 0

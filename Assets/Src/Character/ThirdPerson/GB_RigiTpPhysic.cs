@@ -76,6 +76,7 @@ namespace GBAssets.Character.ThirdPerson
 			m_Capsule = GetComponent<CapsuleCollider>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+			//m_Rigidbody.maxDepenetrationVelocity = m_MaxVelocity;
 			contactNormal = Vector3.up;
 			m_CapsuleHeight = m_Capsule.height;
 			m_CapsuleCenter = m_Capsule.center;
@@ -210,6 +211,13 @@ namespace GBAssets.Character.ThirdPerson
                     jumpVector = jumpDir * m_JumpWidth * (sliding ? 1 : speed);
                     velocity += jumpVector + Vector3.up * m_JumpHeight;
                 }
+				else if (def > 0.5f) //Backflip hack
+				{
+					jumpDot = 1;
+                    jumpDir = -transform.forward;
+                    jumpVector = jumpDir * m_JumpWidth;
+                    velocity += jumpVector + Vector3.up * m_JumpHeight;
+				}
                 else
                 {
                     jumpDot = 1;

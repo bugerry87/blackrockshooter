@@ -13,7 +13,7 @@ namespace GBAssets.Character.ThirdPerson
                 forward = "Forward",
                 turn = "Turn",
                 up = "Up",
-                jump = "Jump",
+				jump = "Jump",
                 jumpLeg = "JumpLeg",
 			    fall = "Fall",
                 slide = "Slide",
@@ -62,14 +62,6 @@ namespace GBAssets.Character.ThirdPerson
 				animator.SetBool(parameters.contact, physic.skinContact);
 			}
 		}
-
-		// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-		override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-		{
-			if(HasPhysics(animator))
-			{
-				//physic.fixGrounding = true;
-			}
-		}
+		
 	}
 }

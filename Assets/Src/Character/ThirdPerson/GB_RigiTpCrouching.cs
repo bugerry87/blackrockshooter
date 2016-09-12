@@ -6,31 +6,17 @@ namespace GBAssets.Character.ThirdPerson
 	public class GB_RigiTpCrouching : GB_ACharState<GB_RigiTpPhysic>
 	{
 		[Serializable]
-		struct Parameters
+		class Parameters
 		{
-			public string
-				forward,
-				turn,
-				crouch,
-				slide,
-				ground,
-				contact;
-
-			public Parameters(
-				string forward = "Forward",
-				string turn = "Turn",
-				string crouch = "Crouch",
-				string slide = "Slide",
-				string ground = "Ground",
-				string contact = "Contact")
-			{
-				this.forward = forward;
-				this.turn = turn;
-				this.crouch = crouch;
-				this.slide = slide;
-				this.ground = ground;
-				this.contact = contact;
-			}
+			[SerializeField]
+			public string 
+				forward = "Forward",
+				turn = "Turn",
+				crouch = "Crouch",
+				slide = "Slide",
+				ground = "Ground",
+				contact = "Contact",
+				jump = "Jump";
 		}
 
 		[SerializeField] Parameters parameters = new Parameters();
@@ -50,7 +36,7 @@ namespace GBAssets.Character.ThirdPerson
 		{
 			if(HasPhysics(animator))
 			{
-				physic.applyTurn = true;
+				physic.applyTurn = physic.def < 0.5f;
 				physic.fixGrounding = true;
 				physic.applyGravity = true;
 
@@ -61,6 +47,7 @@ namespace GBAssets.Character.ThirdPerson
 				animator.SetBool(parameters.ground, physic.grounded);
 				animator.SetBool(parameters.slide, physic.sliding);
 				animator.SetBool(parameters.contact, physic.contact);
+				animator.SetBool(parameters.jump, physic.jump);
 			}
 		}
 
