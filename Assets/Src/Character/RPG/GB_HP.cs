@@ -38,13 +38,16 @@ namespace GBAssets.Character.RPG
 
 		public void TakeDemage(float demage)
 		{
-			curr -= demage * immortality;
+			demage *= immortality;
+			curr -= demage;
 			emitDemage.Invoke(demageId, demage);
 			if(curr == 0)
 			{
 				emitKO.Invoke();
 			}
-			immortality = 1;
+#if UNITY_EDITOR
+			Debug.Log("Demage: " + demage);
+#endif
 		}
 
         public float TakeImpact(Vector3 impact)

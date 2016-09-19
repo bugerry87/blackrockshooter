@@ -40,7 +40,7 @@ namespace GBAssets.Character.ThirdPerson
 				physic.fixGrounding = true;
 				physic.applyGravity = true;
 
-				animator.SetFloat(parameters.forward, physic.speed, sensity, Time.deltaTime);
+				animator.SetFloat(parameters.forward, physic.speed * physic.forwardAmount, sensity, Time.deltaTime);
 				animator.SetFloat(parameters.turn, physic.turnAmount, sensity, Time.deltaTime);
 
                 animator.SetBool(parameters.crouch, physic.crouch || physic.CheckCrouch());

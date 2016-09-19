@@ -76,7 +76,6 @@ namespace GBAssets.Character.ThirdPerson
 			m_Capsule = GetComponent<CapsuleCollider>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-			//m_Rigidbody.maxDepenetrationVelocity = m_MaxVelocity;
 			contactNormal = Vector3.up;
 			m_CapsuleHeight = m_Capsule.height;
 			m_CapsuleCenter = m_Capsule.center;
@@ -84,7 +83,6 @@ namespace GBAssets.Character.ThirdPerson
 
         void Awake()
         {
-            //m_Rigidbody.maxDepenetrationVelocity = m_MaxVelocity;
             slope_limit = Mathf.Cos(m_SlopeLimit * Mathf.Deg2Rad);
             wallup_limit = Mathf.Cos(m_WallUpLimit * Mathf.Deg2Rad);
             grab_edge = Mathf.Cos(m_GrabEdge * Mathf.Deg2Rad);
