@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GBAssets.Character
+namespace GB.Character
 {
 	public abstract class GB_ACharState<T> : StateMachineBehaviour 
 		where T : GB_ACharPhysic

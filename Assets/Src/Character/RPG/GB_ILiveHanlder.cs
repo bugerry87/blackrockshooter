@@ -1,10 +1,10 @@
 ﻿using UnityEngine.EventSystems;
 
-namespace GBAssets.Character.RPG
+namespace GB.Character.RPG
 {
     public interface GB_ILiveHandler : IEventSystemHandler
     {
-        void TakeDemage(float demage);
+        void TakeDemage(string type, float demage);
 
 		void Heal(float heal);
 

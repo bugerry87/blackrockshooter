@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace GBAssets.EventSystems
+namespace GB.EventSystems
 {
     [RequireComponent(typeof(EventSystem))]
     public class GB_InputModule : BaseInputModule

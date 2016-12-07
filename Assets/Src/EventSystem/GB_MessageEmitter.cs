@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GBAssets.EventSystems
+namespace GB.EventSystems
 {
     public sealed class GB_MessageEmitter : MonoBehaviour
     {

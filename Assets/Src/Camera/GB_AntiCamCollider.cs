@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using GBAssets.Utils;
+using GB.Utils;
 
-namespace GBAssets.CameraControl
+namespace GB.CameraControl
 {
 	public sealed class GB_AntiCamCollider : GB_AUpdateMode
 	{
@@ -12,17 +12,22 @@ namespace GBAssets.CameraControl
         [SerializeField] float destine = 5f;
 		[SerializeField] float radius = 0.5f;
 		[SerializeField] string zAxis = "Z";
-		[SerializeField] int ignoreLayer = 9;
+		[SerializeField] int checkLayer = 1;
         [SerializeField] bool allowHiding = false; //needs Trigger!
 
 		public float Destine { get { return destine; } set { destine = value; } }
 
         bool contact;
 
-		void Awake()
+		void Start()
+		{
+			OnFixedUpdate += ResetContact;
+            radius = Mathf.Abs(radius);
+		}
+
+		void OnEnable()
 		{
 			if(target == null) enabled = false;
-            radius = Mathf.Abs(radius);
 		}
 		
 		protected override void DoUpdate(float deltaTime)
@@ -39,7 +44,7 @@ namespace GBAssets.CameraControl
             {
                 transform.localPosition = Vector3.back * Destine;
             }
-            else if(Physics.SphereCast(ray, radius, out hit, Destine, ignoreLayer))
+            else if(Physics.SphereCast(ray, radius, out hit, Destine, checkLayer))
             {
                 transform.localPosition = Vector3.back * (hit.distance - radius);
 			}
@@ -50,7 +55,6 @@ namespace GBAssets.CameraControl
 			
 			//Change desire for next Update an reset contact
 			Destine -= Input.GetAxisRaw(zAxis);
-            contact = false;
         }
         
         void OnTriggerStay(Collider other)
@@ -63,6 +67,11 @@ namespace GBAssets.CameraControl
 			{
 				contact = true;
 			}
+		}
+
+		public void ResetContact()
+		{
+			contact = false;
 		}
 	}
 }

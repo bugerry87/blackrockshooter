@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace GBAssets.Character.ThirdPerson
+namespace GB.Character.ThirdPerson
 {
 	public class GB_RigiTpCrouching : GB_ACharState<GB_RigiTpPhysic>
 	{

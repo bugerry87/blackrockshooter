@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GBAssets.Character.ThirdPerson
+namespace GB.Character.ThirdPerson
 {
     [RequireComponent(typeof (GB_ACharPhysic))]
     public class GB_TpUserControl : MonoBehaviour

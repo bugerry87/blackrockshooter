@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace GBAssets.Character.ThirdPerson
+namespace GB.Character.ThirdPerson
 {
 	[RequireComponent(typeof(Rigidbody))]
 	[RequireComponent(typeof(CapsuleCollider))]

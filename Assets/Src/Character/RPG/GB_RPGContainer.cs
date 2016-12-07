@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace GBAssets.Character.RPG
+namespace GB.Character.RPG
 {
 	public class GB_RPGContainer : MonoBehaviour
 	{

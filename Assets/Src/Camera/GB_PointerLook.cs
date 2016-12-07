@@ -1,7 +1,7 @@
 using UnityEngine;
-using GBAssets.Utils;
+using GB.Utils;
 
-namespace GBAssets.CameraControl
+namespace GB.CameraControl
 {
     public enum RotationAxes
     {

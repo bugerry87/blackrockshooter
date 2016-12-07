@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-namespace GBAssets.CameraControl
+namespace GB.CameraControl
 {
     public abstract class GB_APivotBasedCameraRig : GB_ATargetFollower
     {

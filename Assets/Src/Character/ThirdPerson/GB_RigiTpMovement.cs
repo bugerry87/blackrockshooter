@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace GBAssets.Character.ThirdPerson
+namespace GB.Character.ThirdPerson
 {
 	public sealed class GB_RigiTpMovement : GB_ACharState<GB_RigiTpPhysic>
 	{
@@ -22,7 +22,8 @@ namespace GBAssets.Character.ThirdPerson
 				contact = "Contact",
 				push = "Push",
 				grab = "Grab",
-				climb = "Climb";
+				climb = "Climb",
+				fall = "Fall";
 		}
 
 		[SerializeField] Parameters parameters = new Parameters();
@@ -56,6 +57,7 @@ namespace GBAssets.Character.ThirdPerson
                 animator.SetBool(parameters.push, physic.push);
                 animator.SetBool(parameters.grab, physic.CheckEdge());
                 animator.SetFloat(parameters.climb, physic.grab.distance);
+				animator.SetFloat(parameters.fall, 0);
 			}
 		}
 	}

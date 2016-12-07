@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
-using GBAssets.EventSystems;
+using GB.EventSystems;
 
-namespace GBAssets.Character.ThirdPerson
+namespace GB.Character.ThirdPerson
 {
 	public sealed class GB_RigiTpFocus : GB_ACharState<GB_RigiTpPhysic>
 	{

@@ -1,6 +1,6 @@
 ﻿using UnityEngine.EventSystems;
 
-namespace GBAssets.Character.RPG
+namespace GB.Character.RPG
 {
     public interface GB_IExpHandler : IEventSystemHandler
     {

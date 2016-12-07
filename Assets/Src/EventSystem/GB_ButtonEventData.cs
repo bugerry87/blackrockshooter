@@ -1,6 +1,6 @@
 ﻿using UnityEngine.EventSystems;
 
-namespace GBAssets.EventSystems
+namespace GB.EventSystems
 {
     public class GB_ButtonEventData : BaseEventData
     {

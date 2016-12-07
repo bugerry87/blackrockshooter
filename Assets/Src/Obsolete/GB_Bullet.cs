@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 //obsolete!!!
-namespace GBAssets.Items
+namespace GB.Items
 {
 	[RequireComponent(typeof(Rigidbody))]
 	public class GB_Bullet : MonoBehaviour

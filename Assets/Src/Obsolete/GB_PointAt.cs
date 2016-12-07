@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 //obsolete!!!
-namespace GBAssets.CameraControl
+namespace GB.CameraControl
 {
 	public class GB_PointAt : MonoBehaviour
 	{

@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-namespace GBAssets.Utils
+namespace GB.Utils
 {
     public enum UpdateType // The available methods of updating are:
     {
@@ -14,12 +15,17 @@ namespace GBAssets.Utils
     {
         [SerializeField] protected UpdateType updateType = UpdateType.FixedUpdate;
 
+		public event Action OnUpdate;
+		public event Action OnFixedUpdate;
+		public event Action OnLateUpdate;
+
         void Update()
         {
             if(updateType == UpdateType.Update)
             {
                 DoUpdate(Time.deltaTime);
             }
+			if(OnUpdate != null) OnUpdate();
         }
 
         void FixedUpdate ()
@@ -28,6 +34,7 @@ namespace GBAssets.Utils
             {
                 DoUpdate(Time.fixedDeltaTime);
             }
+			if(OnFixedUpdate != null) OnFixedUpdate();
 		}
 
 		void LateUpdate ()
@@ -36,6 +43,7 @@ namespace GBAssets.Utils
             {
                 DoUpdate(Time.deltaTime);
             }
+			if(OnLateUpdate != null) OnLateUpdate();
 		}
 
         public void ManualUpdate(float deltaTime)

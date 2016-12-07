@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 
-namespace GBAssets.Character.RPG
+namespace GB.Character.RPG
 {
 	public abstract class GB_RPGAttribute : MonoBehaviour
 	{
+		[Header("Properties")]
 		[SerializeField] float m_Max = 100;
 		[SerializeField] float m_Curr = 100;
 		

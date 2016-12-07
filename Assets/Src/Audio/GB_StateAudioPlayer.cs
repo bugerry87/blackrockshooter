@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GBAssets.Audio
+namespace GB.Audio
 {
 	public class GB_StateAudioPlayer : StateMachineBehaviour 
 	{
@@ -11,25 +11,22 @@ namespace GBAssets.Audio
         [SerializeField][Range (0f, 1f)] float cyrcleOffset = 0;
         [SerializeField][Range (0f, 2f)] float volume = 1;
 
-
         public AudioSource source { get; private set; }
-
-		bool init;
         bool played;
 
         bool Init(Animator animator)
         {
-            if(init || (init = source || animator && (source = animator.GetComponent<AudioSource>())))
+			if (source == null)
 			{
-				return true;
-			}
-			else
-			{
+				source = animator.GetComponent<AudioSource>();
+				/*
 #if UNITY_EDITOR
-				Debug.LogWarning("AudioSource missing!");
+				if (source == null)
+					Debug.LogWarning("AudioSource missing! " + animator);
 #endif
-				return false;
+			*/
 			}
+			return source != null;
         }
 
 		public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

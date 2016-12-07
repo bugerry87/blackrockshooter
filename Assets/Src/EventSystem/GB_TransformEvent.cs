@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GBAssets.EventSystems
+namespace GB.EventSystems
 {
 	[Serializable]
 	public class GB_TransformEvent : UnityEvent<Transform>

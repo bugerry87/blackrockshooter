@@ -1,8 +1,8 @@
 ﻿using System;
 using UnityEngine;
-using GBAssets.Character.AI;
+using GB.Character.AI;
 
-namespace GBAssets.Character.ThirdPerson
+namespace GB.Character.ThirdPerson
 {
     public sealed class GB_RigiTpMaritalArt : GB_ACharState<GB_RigiTpPhysic> {
 

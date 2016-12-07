@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
-using GBAssets.Utils;
+using GB.Utils;
 
-namespace GBAssets.Character.AI
+namespace GB.Character.AI
 {
 	[RequireComponent(typeof (NavMeshAgent))]
 	[RequireComponent(typeof (Animator))]
@@ -32,8 +32,15 @@ namespace GBAssets.Character.AI
 				attack,
 				demage;
 
-			public Parameters(string forward = "Forward", string turn = "Turn", string right = "Right", string crouch = "Crouch", string jump = "Jump", string attack = "Attack", string demage = "Demage")
-			{
+			public Parameters(
+				string forward = "Forward", 
+				string turn = "Turn", 
+				string right = "Right", 
+				string crouch = "Crouch", 
+				string jump = "Jump", 
+				string attack = "Attack", 
+				string demage = "Demage"
+			) {
 				this.forward = forward;
 				this.turn = turn;
 				this.right = right;

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-using GBAssets.Utils;
+using GB.Utils;
 
-namespace GBAssets.CameraControl
+namespace GB.CameraControl
 {
 	public class GB_CamClamp : GB_AUpdateMode
 	{

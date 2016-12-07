@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 //obsolete!!!
-namespace GBAssets.Items
+namespace GB.Items
 {
 	[RequireComponent(typeof(Animator))]
 	public class GB_Shooter : MonoBehaviour

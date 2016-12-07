@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GBAssets.EventSystems
+namespace GB.EventSystems
 {
 	public class GB_StateMessenger : StateMachineBehaviour 
 	{
@@ -9,21 +9,17 @@ namespace GBAssets.EventSystems
 
 		public GB_MessageEmitter emitter { get; private set; }
 
-		bool init = false;
-
 		bool Init(Animator animator)
         {
-            if(init || (init = emitter || animator && (emitter = animator.GetComponent<GB_MessageEmitter>())))
+			if (emitter == null)
 			{
-				return true;
-			}
-			else
-			{
+				emitter = animator.GetComponent<GB_MessageEmitter>();
 #if UNITY_EDITOR
-				Debug.LogWarning("GB_MessageEmitter missing!");
+				if(emitter == null)
+					Debug.LogWarning("GB_MessageEmitter missing!");
 #endif
-				return false;
 			}
+			return emitter != null;
         }
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

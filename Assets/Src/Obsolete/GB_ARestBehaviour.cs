@@ -5,7 +5,7 @@ using UnityEngine;
 using System.IO;
 
 
-namespace GBAssets.Network
+namespace GB.Network
 {
 	//Jede Entität hat seine eigenen ResponseData mit Parser-Funktion die aus XML-String C# Daten macht
 	public abstract class ResponseData

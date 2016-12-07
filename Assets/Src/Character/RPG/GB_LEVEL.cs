@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using GBAssets.EventSystems;
+using GB.EventSystems;
 
-namespace GBAssets.Character.RPG
+namespace GB.Character.RPG
 {
 	public class GB_LEVEL : GB_RPGAttribute, GB_IExpHandler
 	{

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace GBAssets.EventSystems
+namespace GB.EventSystems
 {
     public class GB_ButtonEvent : MonoBehaviour, IEventSystemHandler, ISelectHandler, IDeselectHandler, GB_IButtonHandler
     {

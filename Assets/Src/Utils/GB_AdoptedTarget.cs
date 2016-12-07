@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using GBAssets.EventSystems;
+using GB.EventSystems;
 
-namespace GBAssets.Utils
+namespace GB.Utils
 {
 
 	public class GB_AdoptedTarget : MonoBehaviour 

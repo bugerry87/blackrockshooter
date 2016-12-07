@@ -1,34 +1,48 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
-using GBAssets.EventSystems;
+using GB.EventSystems;
 
-namespace GBAssets.Character.RPG
+namespace GB.Character.RPG
 {	
 	public class GB_HP : GB_RPGAttribute, GB_ILiveHandler
 	{
+		[Serializable]
+		public struct Resistence
+		{
+			public string type;
+			[Range(0, 1)] public float effect;
+			public GameObject prefab;
+		}
+
 		[SerializeField] protected string demageId = "Demage";
         [SerializeField] protected string impcatId = "Impact";
 		[SerializeField] protected string HpId = "HP";
-		[SerializeField] GameObject prefab;
+		[SerializeField][Range(0, 1)] protected float blockEffekt;
+
+		[SerializeField] protected Resistence[] resistence;
 		
+		[Header("Events")]
 		[SerializeField] protected GB_TransformEvent emitOffender;
 		[SerializeField] protected GB_FloatEvent emitDemage;
         [SerializeField] protected GB_FloatEvent emitImpact;
 		[SerializeField] protected GB_FloatEvent emitHp;
+		[SerializeField] protected GB_VecEvent emitHpVec;
 		[SerializeField] protected UnityEvent emitKO;
 
-		public GameObject Prefab { get { return prefab; } private set { prefab = value; } }
-		public float immortality { get; set; } //Quick n Dirty
+		public GameObject Prefab { get; private set; }
+		public bool Block { get; set; }
 
-		protected override void ExtendedStart()
-		{
-			immortality = 1;
-		}
+		private Vector3 hpScale = Vector3.one;
+
+		protected override void ExtendedStart() {}
 
 		public void Heal(float heal)
 		{
 			curr += heal;
-			emitHp.Invoke(HpId, Percentage());
+			hpScale.x = Percentage();
+			emitHp.Invoke(HpId, hpScale.x);
+			emitHpVec.Invoke(hpScale);
 		}
 
 		public void Recover()
@@ -36,18 +50,27 @@ namespace GBAssets.Character.RPG
 			curr = max;
 		}
 
-		public void TakeDemage(float demage)
+		public void TakeDemage(string type, float demage)
 		{
-			demage *= immortality;
+			foreach (var res in resistence)
+			{
+				if (res.type == type)
+				{
+					demage *= 1 - res.effect;
+					Prefab = res.prefab;
+				}
+			}
+
+			if (Block) demage *= 1 - blockEffekt;
 			curr -= demage;
+			hpScale.x = Percentage();
 			emitDemage.Invoke(demageId, demage);
+			emitHp.Invoke(HpId, hpScale.x);
+			emitHpVec.Invoke(hpScale);
 			if(curr == 0)
 			{
 				emitKO.Invoke();
 			}
-#if UNITY_EDITOR
-			Debug.Log("Demage: " + demage);
-#endif
 		}
 
         public float TakeImpact(Vector3 impact)

@@ -2,7 +2,7 @@
 using System.Threading;
 using UnityEngine;
 
-namespace GBAssets.Utils
+namespace GB.Utils
 {
 	public class GB_ActionScheduler : ScriptableObject
 	{
@@ -10,8 +10,12 @@ namespace GBAssets.Utils
 		{
 			lock (key)
 			{
-				if(action != null) action();
-				Thread.Sleep(cooldown);
+				try
+				{
+					action();
+					Thread.Sleep(cooldown);
+				}
+				finally {}
 			}
 		};
 

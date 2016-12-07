@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace GBAssets.Character.ThirdPerson
+namespace GB.Character.ThirdPerson
 {
 	public sealed class GB_RigiTpJumping : GB_ACharState<GB_RigiTpPhysic>
 	{

@@ -255,6 +255,9 @@ ModelImporter:
     7400132: FamRig_LeftSwing
     7400134: FamRig_BackSlash
     7400136: FamRig_Salto
+    7400138: FamRig_JumpStrike
+    7400140: FamRig_JumpStrikePos
+    7400142: FamRig_JumpDash
     9500000: //RootNode
     13700000: Body
     13700002: EyesPanel
@@ -276,11 +279,20 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'FamRig_MartialArts5' has import animation warnings
+    animationImportWarnings: "\nClip 'FamRig_MartialArtsAir' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'Arm_001_R' has scale animation
+      that will be discarded.\n\t'Hand_R' has scale animation that will be discarded.\n\t'Ring_002_R'
+      has scale animation that will be discarded.\n\t'Pinky_002_R' has scale animation
+      that will be discarded.\n\t'Arm_001_L' has scale animation that will be discarded.\n\t'Hand_L'
+      has scale animation that will be discarded.\n\t'Ring_002_L' has scale animation
+      that will be discarded.\n\t'Ring_003_L' has scale animation that will be discarded.\n\t'C_Thumb_001_L'
+      has scale animation that will be discarded.\n\t'Foot_R' has scale animation
+      that will be discarded.\n\nClip 'FamRig_MartialArts5' has import animation warnings
       that might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'Hand_R' has scale animation that will be
       discarded.\n\t'Arm_001_L' has scale animation that will be discarded.\n\t'Hand_L'
@@ -471,7 +483,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.48458052
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -619,7 +639,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.60165024
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -767,7 +795,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.35921156
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -1063,7 +1099,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.50498337
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 4eded5ef1cd2fb745be5bb687c6b59f5,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -1211,7 +1255,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.3842829
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 4eded5ef1cd2fb745be5bb687c6b59f5,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -1507,7 +1559,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.4518272
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: c90ae476b96430242aea824e62479e31,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -1655,7 +1715,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.14650059
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.49914172
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -1803,7 +1879,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.52642363
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -1951,7 +2035,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.23327446
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -2099,7 +2191,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.36047137
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -2247,7 +2347,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.5193099
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -2395,7 +2503,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.19103605
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: c90ae476b96430242aea824e62479e31,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -2543,7 +2659,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.323136
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4302387
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 4eded5ef1cd2fb745be5bb687c6b59f5,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -2691,7 +2823,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.22339419
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 4eded5ef1cd2fb745be5bb687c6b59f5,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -2839,7 +2979,343 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.20598006
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 4eded5ef1cd2fb745be5bb687c6b59f5,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_JumpStrike
+      takeName: FamRig_MartialArtsAir
+      firstFrame: 55
+      lastFrame: 129
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.052065548
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.25735247
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: c90ae476b96430242aea824e62479e31,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4956333
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/C_Root
+        weight: 1
+      - path: Armature/C_Root/C_Hip
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Pointer_001_L/Pointer_002_L/Pointer_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/C_Thumb_001_L/Thumb_002_L/Thumb_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Mid_001_L/Mid_002_L/Mid_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Pinky_001_L/Pinky_002_L/Pinky_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/Ring_001_L/Ring_002_L/Ring_003_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Pointer_001_R/Pointer_002_R/Pointer_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/C_Thumb_001_R/Thumb_002_R/Thumb_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Mid_001_R/Mid_002_R/Mid_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Pinky_001_R/Pinky_002_R/Pinky_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/Ring_001_R/Ring_002_R/Ring_003_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Hip_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Knee_L
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Hip_R
+        weight: 0
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Knee_R
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FamRig_JumpDash
+      takeName: FamRig_MartialArtsAir
+      firstFrame: 144
+      lastFrame: 169
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.20675129
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: 63734c1967d84bd45a0c145e43602a4c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

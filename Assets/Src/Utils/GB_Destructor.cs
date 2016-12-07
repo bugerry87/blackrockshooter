@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace GBAssets.Utils
+namespace GB.Utils
 {
-    public class GB_Distructor : MonoBehaviour
+    public class GB_Destructor : MonoBehaviour
 	{
 		[SerializeField] protected float delay;
 

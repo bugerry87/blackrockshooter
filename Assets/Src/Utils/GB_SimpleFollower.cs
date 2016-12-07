@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GBAssets.Utils
+namespace GB.Utils
 {
 	public class GB_SimpleFollower : GB_AdoptedTarget
 	{
