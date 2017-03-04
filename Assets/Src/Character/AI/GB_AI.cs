@@ -4,7 +4,7 @@ using GB.Utils;
 
 namespace GB.Character.AI
 {
-	[RequireComponent(typeof (NavMeshAgent))]
+	[RequireComponent(typeof (UnityEngine.AI.NavMeshAgent))]
 	[RequireComponent(typeof (Animator))]
 	public class GB_AI : GB_AdoptedTarget
 	{
@@ -60,7 +60,7 @@ namespace GB.Character.AI
 		[SerializeField] protected int requestCooldown = 500;
 		[SerializeField] protected int attackCooldown = 500;
 
-		public NavMeshAgent agent { get; private set; }
+		public UnityEngine.AI.NavMeshAgent agent { get; private set; }
 		public Animator animator { get; private set; }
 		public Rigidbody rig { get; private set; }
 		public GB_ActionScheduler scheduler { get; protected set; }
@@ -73,7 +73,7 @@ namespace GB.Character.AI
 		{
 			Attack += RequestAttack;
 			scheduler = ScriptableObject.CreateInstance<GB_ActionScheduler>();
-			agent = GetComponent<NavMeshAgent>();
+			agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 			animator = GetComponent<Animator>();
 			rig = GetComponent<Rigidbody>();
 		}
