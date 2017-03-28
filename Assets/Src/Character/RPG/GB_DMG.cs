@@ -44,7 +44,7 @@ namespace GB.Character.RPG
 
 			if (prefab)
 			{
-				Instantiate(prefab, hitPoint, Quaternion.LookRotation(hitNormal, transform.up));
+				Instantiate(prefab, hitPoint, Quaternion.LookRotation(hitNormal, transform.up), other.transform);
 			}
 			else if (defaultPrefab)
 			{

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: db09f7fec2cafce4c8b938118c8ecd49
+timeCreated: 1490737242
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: B790-Deco
+  fontNames:
+  - B790-Deco
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

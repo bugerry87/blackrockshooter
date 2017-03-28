@@ -45,8 +45,8 @@ namespace GB.CameraControl
 				transform.forward = target.adopted.position - transform.position;
 			}
             */
-
-            if (target && target.target || disableButton.Length != 0 && (Input.GetButton(disableButton) || Mathf.Abs(Input.GetAxis(disableButton)) > 0))
+			
+            if (deltaTime == 0 || (target && target.target) || disableButton.Length != 0 && (Input.GetButton(disableButton) || Mathf.Abs(Input.GetAxis(disableButton)) > 0))
 			{
 				//DoNothing
 			}

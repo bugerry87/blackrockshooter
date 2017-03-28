@@ -16,7 +16,8 @@ namespace GB.Character.RPG
 		}
 
 		[SerializeField] protected string demageId = "Demage";
-        [SerializeField] protected string impcatId = "Impact";
+		[SerializeField] protected string impactForceId = "ImpactForce";
+        [SerializeField] protected string impactDotId = "ImpactDot";
 		[SerializeField] protected string HpId = "HP";
 		[SerializeField][Range(0, 1)] protected float blockEffekt;
 
@@ -25,7 +26,8 @@ namespace GB.Character.RPG
 		[Header("Events")]
 		[SerializeField] protected GB_TransformEvent emitOffender;
 		[SerializeField] protected GB_FloatEvent emitDemage;
-        [SerializeField] protected GB_FloatEvent emitImpact;
+		[SerializeField] protected GB_FloatEvent emitImpactForce;
+        [SerializeField] protected GB_FloatEvent emitImpactDot;
 		[SerializeField] protected GB_FloatEvent emitHp;
 		[SerializeField] protected GB_VecEvent emitHpVec;
 		[SerializeField] protected UnityEvent emitKO;
@@ -52,6 +54,7 @@ namespace GB.Character.RPG
 
 		public void TakeDemage(string type, float demage)
 		{
+			emitImpactForce.Invoke(impactForceId, demage);
 			foreach (var res in resistence)
 			{
 				if (res.type == type)
@@ -82,8 +85,8 @@ namespace GB.Character.RPG
             {
                 forward *= -1;
             }
-
-			emitImpact.Invoke(impcatId, forward);
+			
+			emitImpactDot.Invoke(impactDotId, forward);
 			return forward;
 		}
 

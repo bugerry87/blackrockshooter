@@ -18,7 +18,7 @@ namespace GB.UI
 		[SerializeField] private int checkLayer = 1;
 		[SerializeField] private bool raycast = true;
 		
-		private Ray ray;
+		private Ray ray = new Ray();
 		private RaycastHit hit;
 		private Vector3 pos;
 

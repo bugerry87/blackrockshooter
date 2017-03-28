@@ -28,16 +28,16 @@ namespace GB.Character.ThirdPerson
         }
 
         [SerializeField] HelperNames m_Helpers = new HelperNames();
-		[Range(0f, 1f)][SerializeField] float m_Skin = 0.5f;
-		[Range(0f, 1f)][SerializeField] float m_Offset = 0.5f;
-        [Range(1f, 2f)][SerializeField] float m_GrabWidth = 1.1f;
-		[Range(0, MAX_SLOPLIMIT)][SerializeField] int m_SlopeLimit = 44;
-        [Range(0, MAX_SLOPLIMIT)][SerializeField] int m_WallUpLimit = 30;
-        [Range(0, MAX_SLOPLIMIT)][SerializeField] int m_GrabEdge = 5;
-		[Range(0f, 10f)][SerializeField] float m_GravityMultiplier = 1f;
-		[Range(0f, 10f)][SerializeField] float m_SlideMultiplier = 1f;
-		[Range(0f, 1f)][SerializeField] float m_CrouchRange = 0.5f;
-        [Range(0f, 1.5f)][SerializeField] float m_GrabRange = 0.9f;
+		[SerializeField][Range(0f, 1f)] float m_Skin = 0.5f;
+		[SerializeField][Range(0f, 1f)] float m_Offset = 0.5f;
+        [SerializeField][Range(1f, 2f)] float m_GrabWidth = 1.1f;
+		[SerializeField][Range(0, MAX_SLOPLIMIT)] int m_SlopeLimit = 44;
+        [SerializeField][Range(0, MAX_SLOPLIMIT)] int m_WallUpLimit = 30;
+        [SerializeField][Range(0, MAX_SLOPLIMIT)] int m_GrabEdge = 5;
+		[SerializeField][Range(0f, 10f)] float m_GravityMultiplier = 1f;
+		[SerializeField][Range(0f, 10f)] float m_SlideMultiplier = 1f;
+		[SerializeField][Range(0f, 1f)] float m_CrouchRange = 0.5f;
+        [SerializeField][Range(0f, 1.5f)] float m_GrabRange = 0.9f;
 		[SerializeField] float m_TurnSpeed = 360f;
 		[SerializeField] float m_JumpHeight = 12f;
 		[SerializeField] float m_JumpWidth = 12f;

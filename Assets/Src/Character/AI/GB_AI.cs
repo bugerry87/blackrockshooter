@@ -227,7 +227,7 @@ namespace GB.Character.AI
 		protected virtual void OnAnimatorMove()
 		{
 			if(!ko) DoUpdate();
-			agent.velocity = animator.deltaPosition / Time.deltaTime;
+			if (Time.deltaTime != 0) agent.velocity = animator.deltaPosition / Time.deltaTime;
 		}
 
 		protected override void OnTriggerStay(Collider other)
