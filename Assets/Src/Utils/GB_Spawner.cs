@@ -6,14 +6,18 @@ namespace GB.Utils
 	{
 		public enum SpawnType { Auto, Trigger, Manuel }
 
+		[Header("Prefabs")]
 		[SerializeField] protected GameObject m_Prefab;
 		[SerializeField] protected Transform m_Parent;
+		[Header("Spawn")]
 		[SerializeField] protected SpawnType m_SpawnType = SpawnType.Auto;
 		[SerializeField] int m_Amount = 1;
-		[SerializeField] protected float m_Delay;
+		[SerializeField] protected float m_SpawnDelay;
 		[SerializeField] protected float m_DelayRandom;
 		[SerializeField] protected string m_TriggerTag;
-		[SerializeField] protected bool destroyWhenDone;
+		[Header("Self Destroy")]
+		[SerializeField] protected bool m_DestroyWhenDone;
+		[SerializeField] protected float m_DestroyDelay;
 
 		public BoxCollider box { get; protected set; }
 		public SphereCollider sphere { get; protected set; }
@@ -79,15 +83,15 @@ namespace GB.Utils
 					if(m_Amount != -1) amount--;
 				}
 			}
-			else if(destroyWhenDone)
+			else if(m_DestroyWhenDone)
 			{
-				Destroy(gameObject);
+				Destroy(gameObject, m_DestroyDelay);
 			}
 		}
 
 		public void ResetTimeout()
 		{
-			timeout = Time.time + m_Delay + m_DelayRandom * Random.value;
+			timeout = Time.time + m_SpawnDelay + m_DelayRandom * Random.value;
 		}
 	}
 }

@@ -14,9 +14,11 @@ namespace GB.Character.ThirdPerson
                 turn = "Turn",
                 up = "Up",
                 fall = "Fall",
+				jump = "Jump",
                 jumpLeg = "JumpLeg",
                 slide = "Slide",
                 ground = "Ground",
+				airborne = "Airborne",
                 contact = "Contact",
                 grab = "Grab",
                 climb = "Climb";
@@ -26,8 +28,7 @@ namespace GB.Character.ThirdPerson
 		[Range(0f, 10f)][SerializeField] float sensity = 0.1f;
 		[SerializeField] float explosion = 500;
 		[SerializeField] float range = 10;
-
-		 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+		
 		override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 		{
 			if(HasPhysics(animator))
@@ -38,10 +39,10 @@ namespace GB.Character.ThirdPerson
 				{
 					rig.AddExplosionForce(explosion, animator.transform.position, range);
 				}
+				animator.SetBool(parameters.airborne, true);
 			}
 		}
-
-		// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+		
 		override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 		{
 			if(HasPhysics(animator))
@@ -57,16 +58,16 @@ namespace GB.Character.ThirdPerson
 				animator.SetFloat(parameters.jumpLeg, physic.jumpLeg * physic.jumpDot, sensity, Time.deltaTime);
                 animator.SetFloat(parameters.up, physic.up);
 
+				animator.SetBool(parameters.jump, false);
 				animator.SetBool(parameters.ground, physic.grounded);
 				animator.SetBool(parameters.slide, physic.sliding);
-				animator.SetBool(parameters.contact, physic.skinContact); //physic.skinContact
+				animator.SetBool(parameters.contact, physic.skinContact);
 
                 animator.SetBool(parameters.grab, physic.CheckEdge());
                 animator.SetFloat(parameters.climb, physic.grab.distance);
 			}
 		}
-
-		// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+		
 		override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 		{
 			if(HasPhysics(animator))

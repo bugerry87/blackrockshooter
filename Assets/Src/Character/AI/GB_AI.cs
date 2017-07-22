@@ -8,8 +8,6 @@ namespace GB.Character.AI
 	[RequireComponent(typeof (Animator))]
 	public class GB_AI : GB_AdoptedTarget
 	{
-		public const string ATTACK_LOCK = "ATTACK";
-
 		protected static event Action<GameObject> Attack;
 
 		public static void InvokeAttack(GameObject go)
@@ -59,6 +57,7 @@ namespace GB.Character.AI
 		[SerializeField] protected float minDistance = 4;
 		[SerializeField] protected int requestCooldown = 500;
 		[SerializeField] protected int attackCooldown = 500;
+		[SerializeField] protected bool syncAttacks = true;
 
 		public UnityEngine.AI.NavMeshAgent agent { get; private set; }
 		public Animator animator { get; private set; }
@@ -206,7 +205,14 @@ namespace GB.Character.AI
 
 		public void RequestAttack(IAsyncResult result = null)
 		{
-			scheduler.Request(ATTACK_LOCK, DoAttack, attackCooldown, StopAttack);
+			if (syncAttacks)
+			{
+				scheduler.Request(target, DoAttack, attackCooldown, StopAttack);
+			}
+			else
+			{
+				scheduler.Request(this, DoAttack, attackCooldown, StopAttack);
+			}
 		}
 
 		public void DoAttack()

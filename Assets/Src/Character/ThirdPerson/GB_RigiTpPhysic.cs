@@ -28,33 +28,35 @@ namespace GB.Character.ThirdPerson
         }
 
         [SerializeField] HelperNames m_Helpers = new HelperNames();
-		[SerializeField][Range(0f, 1f)] float m_Skin = 0.5f;
-		[SerializeField][Range(0f, 1f)] float m_Offset = 0.5f;
-        [SerializeField][Range(1f, 2f)] float m_GrabWidth = 1.1f;
-		[SerializeField][Range(0, MAX_SLOPLIMIT)] int m_SlopeLimit = 44;
-        [SerializeField][Range(0, MAX_SLOPLIMIT)] int m_WallUpLimit = 30;
-        [SerializeField][Range(0, MAX_SLOPLIMIT)] int m_GrabEdge = 5;
-		[SerializeField][Range(0f, 10f)] float m_GravityMultiplier = 1f;
-		[SerializeField][Range(0f, 10f)] float m_SlideMultiplier = 1f;
-		[SerializeField][Range(0f, 1f)] float m_CrouchRange = 0.5f;
-        [SerializeField][Range(0f, 1.5f)] float m_GrabRange = 0.9f;
-		[SerializeField] float m_TurnSpeed = 360f;
-		[SerializeField] float m_JumpHeight = 12f;
-		[SerializeField] float m_JumpWidth = 12f;
-		[SerializeField] float m_AirControl = 0.5f;
-        [SerializeField] float m_MaxVelocity = 18f;
+		[SerializeField][Range(0f, 1f)] protected float m_Skin = 0.5f;
+		[SerializeField][Range(0f, 1f)] protected float m_Offset = 0.5f;
+        [SerializeField][Range(1f, 2f)] protected float m_GrabWidth = 1.1f;
+		[SerializeField][Range(0f, 2f)] protected float m_GrabHeight = 1.8f;
+        [SerializeField][Range(0f, 2f)] protected float m_GrabRange = 0.9f;
+		[SerializeField][Range(0, MAX_SLOPLIMIT)] protected int m_SlopeLimit = 44;
+        [SerializeField][Range(0, MAX_SLOPLIMIT)] protected int m_WallUpLimit = 30;
+        [SerializeField][Range(0, MAX_SLOPLIMIT)] protected int m_GrabEdge = 5;
+		[SerializeField][Range(0f, 10f)] protected float m_GravityMultiplier = 1f;
+		[SerializeField][Range(0f, 10f)] protected float m_SlideMultiplier = 1f;
+		[SerializeField][Range(0f, 1f)] protected float m_CrouchRange = 0.5f;
+		[SerializeField] protected float m_TurnSpeed = 360f;
+		[SerializeField] protected float m_JumpHeight = 12f;
+		[SerializeField] protected float m_JumpWidth = 12f;
+		[SerializeField] protected float m_AirControl = 0.5f;
+        [SerializeField] protected float m_MaxVelocity = 18f;
 
 		public Vector3 jumpVector {get; protected set;}
 		public Vector3 jumpDir {get; protected set;}
 		public float jumpDot { get; protected set; }
 		public float jumpLeg { get; set; }
 
-		protected CapsuleCollider m_Capsule {get; private set;}
-		protected Rigidbody m_Rigidbody {get; private set;}
-		protected Vector3 m_CapsuleCenter {get; private set;}
-		protected float m_CapsuleHeight {get; private set;}
+		protected CapsuleCollider m_Capsule {get; set;}
+		protected Rigidbody m_Rigidbody {get; set;}
+		protected Vector3 m_CapsuleCenter {get; set;}
+		protected float m_CapsuleHeight {get; set;}
 
-        public bool push { get; private set; }
+		public bool crouching { get; protected set; }
+        public bool push { get; protected set; }
 
 		public bool applyGravity {get; set;}
 		public bool applyTurn {get; set;}
@@ -65,9 +67,9 @@ namespace GB.Character.ThirdPerson
 		public bool applyJump {get; set;}
 		public bool applyWallwalk {get; set;}
 
-        private float slope_limit = 0;
-        private float wallup_limit = 0;
-        private float grab_edge = 0;
+        protected float slope_limit = 0;
+        protected float wallup_limit = 0;
+        protected float grab_edge = 0;
 
         public RaycastHit grab;
 
@@ -275,6 +277,7 @@ namespace GB.Character.ThirdPerson
 		{
 			m_Capsule.height = m_CapsuleHeight * m_CrouchRange;
 			m_Capsule.center = m_CapsuleCenter * m_CrouchRange;
+			crouching = true;
 		}
 		
 		public virtual bool CheckCrouch()
@@ -287,23 +290,26 @@ namespace GB.Character.ThirdPerson
 
 		public virtual void Standup()
 		{
-			m_Capsule.height = m_CapsuleHeight;
-			m_Capsule.center = m_CapsuleCenter;
+			if (!CheckCrouch())
+			{
+				m_Capsule.height = m_CapsuleHeight;
+				m_Capsule.center = m_CapsuleCenter;
+				crouching = false;
+			}
 		}
 
         public virtual bool CheckEdge()
         {
-            float height = m_CapsuleHeight * transform.localScale.y;
             Vector3 pos =
                 transform.position +
                 transform.forward * m_Capsule.radius * transform.localScale.z * m_GrabWidth +
-                Vector3.up * height;
+                Vector3.up * m_GrabHeight;
             Ray ray = new Ray(pos, Vector3.down);
 
 #if UNITY_EDITOR
             Debug.DrawRay(pos, Vector3.down, Color.red);
 #endif
-            return Physics.Raycast(ray, out grab, height * m_GrabRange, 1) && grab.normal.y > grab_edge;
+            return Physics.Raycast(ray, out grab, m_GrabRange, 1) && grab.normal.y > grab_edge;
         }
     }
 }

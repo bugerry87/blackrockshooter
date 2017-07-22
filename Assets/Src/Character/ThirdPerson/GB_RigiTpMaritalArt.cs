@@ -41,7 +41,7 @@ namespace GB.Character.ThirdPerson
                 }
 				
 				hold = physic.action1 || physic.action2;
-                animator.SetBool(parameters.hold, physic.action1 != physic.action2);
+				animator.SetBool(parameters.hold, physic.action1 ^ physic.action2);
 				animator.SetFloat(parameters.def, physic.def, sensity, Time.deltaTime);            
 			}
 	    }

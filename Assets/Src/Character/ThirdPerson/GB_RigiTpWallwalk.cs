@@ -27,17 +27,6 @@ namespace GB.Character.ThirdPerson
 
 		[Range(0f, 10f)][SerializeField] float sensity = 0.1f;
 
-		private float time;
-
-		 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-		override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-		{
-			if(HasPhysics(animator))
-			{
-                time = 0;
-			}
-		}
-
 		// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 		override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 		{
@@ -50,9 +39,6 @@ namespace GB.Character.ThirdPerson
 				animator.SetFloat(parameters.turn, physic.turnAmount, sensity, Time.deltaTime);
 				animator.SetFloat(parameters.up, physic.up, sensity, Time.deltaTime);
 				animator.SetFloat(parameters.right, physic.right, sensity, Time.deltaTime);
-
-                if (!physic.contact)
-                    animator.SetFloat(parameters.fall, time -= Time.deltaTime);
 
 				animator.SetBool(parameters.ground, physic.grounded);
 				animator.SetBool(parameters.slide, physic.sliding);

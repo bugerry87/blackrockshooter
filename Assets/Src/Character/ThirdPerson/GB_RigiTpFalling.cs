@@ -16,23 +16,23 @@ namespace GB.Character.ThirdPerson
 				jumpLeg = "JumpLeg",
 				slide = "Slide",
 				ground = "Ground",
+				airborne = "Airborne",
 				contact = "Contact";
 		}
 		
 		[SerializeField] Parameters parameters = new Parameters();
 
 		[Range(0f, 10f)][SerializeField] float sensity = 0.1f;
-
-		 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+		
 		override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 		{
 			if(HasPhysics(animator))
 			{
 				physic.StartFall();
+				animator.SetBool(parameters.airborne, true);
 			}
 		}
-
-		// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+		
 		override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 		{
 			if(HasPhysics(animator))
@@ -52,8 +52,7 @@ namespace GB.Character.ThirdPerson
 				animator.SetBool(parameters.contact, physic.contact);
 			}
 		}
-
-		// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+		
 		override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 		{
 			if(HasPhysics(animator))

@@ -70,6 +70,7 @@ ModelImporter:
     100124: Thumb_002_R
     100126: Thumb_003_L
     100128: Thumb_003_R
+    100130: FamHead
     400000: Arm_001_L
     400002: Arm_001_R
     400004: Arm_002_L
@@ -135,11 +136,13 @@ ModelImporter:
     400124: Thumb_002_R
     400126: Thumb_003_L
     400128: Thumb_003_R
+    400130: FamHead
     4300000: DMBody
     4300002: DMDress
     4300004: DMAccessory
     4300006: DMHair
     4300008: Scythe
+    4300010: FamHead
     7400000: Default Take
     9500000: //RootNode
     13700000: DMAccessory
@@ -147,6 +150,7 @@ ModelImporter:
     13700004: DMDress
     13700006: DMHair
     13700008: Scythe
+    13700010: FamHead
   materials:
     importMaterials: 0
     materialName: 0
@@ -155,7 +159,7 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
-    optimizeGameObjects: 0
+    optimizeGameObjects: 1
     motionNodeName: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -166,7 +170,16 @@ ModelImporter:
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - Armature/C_Root/C_Hip/C_Back/Chest/Neck/Head
+    - Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R/Foot_R
+    - Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L/Foot_L
+    - Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_R/Arm_001_R/Arm_002_R/Hand_R/HandSocket_R
+    - Armature/C_Root/C_Hip/C_Back/Chest/C_Shoulder_L/Arm_001_L/Arm_002_L/Hand_L/HandSocket_L
+    - Armature/C_Root/C_Hip
+    - Armature/C_Root/C_Hip/Leg_001_R/Leg_002_R
+    - Armature/C_Root/C_Hip/Leg_001_L/Leg_002_L
+    - Armature/C_Root
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -920,13 +933,12 @@ ModelImporter:
     armStretch: 0.02
     legStretch: 0.02
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: C_Root
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 0
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 6166b5c338f852a479b0fc51a41305cb,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3
   humanoidOversampling: 1
   additionalBone: 0

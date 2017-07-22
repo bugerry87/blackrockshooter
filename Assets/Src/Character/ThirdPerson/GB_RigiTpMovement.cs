@@ -19,6 +19,7 @@ namespace GB.Character.ThirdPerson
 				jumpLeg = "JumpLeg",
 				slide = "Slide",
 				ground = "Ground",
+				airborne = "Airborne",
 				contact = "Contact",
 				push = "Push",
 				grab = "Grab",
@@ -30,7 +31,14 @@ namespace GB.Character.ThirdPerson
 
 		[Range(0f, 10f)][SerializeField] float sensity = 0.1f;
 
-		// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+		override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+		{
+			if(HasPhysics(animator))
+			{
+				animator.SetBool(parameters.airborne, false);
+			}
+		}
+		
 		override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 		{
 			if(HasPhysics(animator))
