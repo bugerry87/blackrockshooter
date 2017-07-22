@@ -211,7 +211,7 @@ namespace GB.Character.ThirdPerson
                     jumpVector = jumpDir * m_JumpWidth * (sliding ? 1 : speed);
                     velocity += jumpVector + Vector3.up * m_JumpHeight;
                 }
-				else if (def > 0.5f) //Backflip hack
+				else if (def > 0.5f && speed <= 0.065f) //Backflip hack
 				{
 					jumpDot = 1;
                     jumpDir = -transform.forward;
