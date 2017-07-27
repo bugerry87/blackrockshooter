@@ -137,12 +137,12 @@ namespace GB.Character.AI
 				turn = turn < 0 ? -1 : 1;
 			}
 
-			if(back < -0.5f)
+			if (back < -0.5f)
 			{
 				right = right < 0f ? -5 : 1;
 			}
 
-			if(sqrDist < minDistance * minDistance)
+			if (sqrDist < minDistance * minDistance)
 			{
 				animator.SetFloat(parameters.forward, -1, sensity, Time.deltaTime);
 			}
@@ -155,8 +155,11 @@ namespace GB.Character.AI
 			animator.SetFloat(parameters.right, right, sensity, Time.deltaTime);
 			animator.SetBool(parameters.jump, agent.isOnOffMeshLink);
 
-			if(!agent.isOnOffMeshLink && (attack || back > malignity) && forward > precision)
-			{
+			if (
+				!agent.isOnOffMeshLink && 
+				(attack || malignity == 0.0f || back > malignity) && 
+				(precision == 0.0f || forward > precision)
+			) {
 				if (attack)
 				{
 					animator.SetTrigger(parameters.attack);

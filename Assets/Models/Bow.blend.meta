@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 3bedecc6b10af42408379dffa53d8e1d
+timeCreated: 1500918457
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arrow
+    100002: //RootNode
+    100004: Bow
+    100006: Bow_L
+    100008: Bow_R
+    100010: BowArmature
+    100012: C_Haft
+    100014: C_String
+    100016: String_L
+    100018: String_R
+    400000: Arrow
+    400002: //RootNode
+    400004: Bow
+    400006: Bow_L
+    400008: Bow_R
+    400010: BowArmature
+    400012: C_Haft
+    400014: C_String
+    400016: String_L
+    400018: String_R
+    4300000: Bow
+    4300002: Arrow
+    7400000: Default Take
+    7400002: Bow_Std
+    7400004: Bow_Tension
+    9500000: //RootNode
+    13700000: Arrow
+    13700002: Bow
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 1
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths:
+    - BowArmature/C_String
+    clipAnimations:
+    - serializedVersion: 16
+      name: Bow_Std
+      takeName: Bow_Std
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bow
+        weight: 1
+      - path: Arrow
+        weight: 1
+      - path: BowArmature
+        weight: 1
+      - path: BowArmature/C_Haft
+        weight: 1
+      - path: BowArmature/C_Haft/Bow_L
+        weight: 1
+      - path: BowArmature/C_Haft/Bow_L/String_L
+        weight: 1
+      - path: BowArmature/C_Haft/Bow_R
+        weight: 1
+      - path: BowArmature/C_Haft/Bow_R/String_R
+        weight: 1
+      - path: BowArmature/C_String
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Bow_Tension
+      takeName: Bow_Tension
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bow
+        weight: 1
+      - path: Arrow
+        weight: 1
+      - path: BowArmature
+        weight: 1
+      - path: BowArmature/C_Haft
+        weight: 1
+      - path: BowArmature/C_Haft/Bow_L
+        weight: 1
+      - path: BowArmature/C_Haft/Bow_L/String_L
+        weight: 1
+      - path: BowArmature/C_Haft/Bow_R
+        weight: 1
+      - path: BowArmature/C_Haft/Bow_R/String_R
+        weight: 1
+      - path: BowArmature/C_String
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

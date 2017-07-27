@@ -12,8 +12,8 @@ namespace GB.Character.RPG
 		[SerializeField] protected string effectType = "Physical";
 
 		[Header("Events")]
-        [SerializeField] protected GB_FloatEvent emitContact;
-		[SerializeField] protected GB_FloatEvent emitHit;
+        [SerializeField] protected GB_NamedFloatEvent emitContact;
+		[SerializeField] protected GB_NamedFloatEvent emitHit;
 
 		public ParticleSystem ps { get; protected set; }
 		public Vector3 hitPoint { get; protected set; }
@@ -30,6 +30,9 @@ namespace GB.Character.RPG
 
 		protected virtual void OnContact(GameObject other)
 		{
+			if (!isActiveAndEnabled) return;
+			if (other.tag == allyTag) return;
+
 			GameObject prefab = null;
 			float effect = 0;
 			GB_HP hp = other.GetComponent<GB_HP>();
@@ -55,7 +58,7 @@ namespace GB.Character.RPG
 
 		void OnTriggerEnter(Collider other)
 		{
-			if (!other.isTrigger && other.tag != allyTag)
+			if (!other.isTrigger)
             {
 				hitPoint = transform.position;
 				hitNormal = -transform.forward;

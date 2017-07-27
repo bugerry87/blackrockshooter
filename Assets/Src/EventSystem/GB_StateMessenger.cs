@@ -28,7 +28,7 @@ namespace GB.EventSystems
 			{
 				foreach(var msg in enterMessages)
 				{
-					if(msg != null && msg.Length > 0) emitter.EmitMessage(animator.gameObject, msg);
+					if(msg != null && msg.Length > 0) emitter.EmitMessage(msg);
 				}
 			}
         }
@@ -39,7 +39,7 @@ namespace GB.EventSystems
 			{
 				foreach(var msg in exitMessages)
 				{
-					if(msg != null && msg.Length > 0) emitter.EmitMessage(animator.gameObject, msg);
+					if(msg != null && msg.Length > 0) emitter.EmitMessage(msg);
 				}
 			}
         }

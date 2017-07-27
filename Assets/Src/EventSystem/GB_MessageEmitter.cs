@@ -35,8 +35,8 @@ namespace GB.EventSystems
             }
         }
 
-        public void EmitMessage(GameObject source, string message)
-        {
+        public void EmitMessage(string message)
+		{
 			if (isActiveAndEnabled)
 			{
 				UnityEvent trigger;

@@ -5,14 +5,15 @@ using GB.EventSystems;
 
 namespace GB.Character.RPG
 {	
+	[DisallowMultipleComponent]
 	public class GB_HP : GB_RPGAttribute, GB_ILiveHandler
 	{
 		[Serializable]
-		public struct Resistence
+		public class Resistence
 		{
-			public string type;
-			[Range(0, 1)] public float effect;
-			public GameObject prefab;
+			public string type = null;
+			public GameObject prefab = null;
+			[Range(0, 2)] public float effect = 1.0f;
 		}
 
 		[SerializeField] protected string demageId = "Demage";
@@ -25,10 +26,10 @@ namespace GB.Character.RPG
 		
 		[Header("Events")]
 		[SerializeField] protected GB_TransformEvent emitOffender;
-		[SerializeField] protected GB_FloatEvent emitDemage;
-		[SerializeField] protected GB_FloatEvent emitImpactForce;
-        [SerializeField] protected GB_FloatEvent emitImpactDot;
-		[SerializeField] protected GB_FloatEvent emitHp;
+		[SerializeField] protected GB_NamedFloatEvent emitDemage;
+		[SerializeField] protected GB_NamedFloatEvent emitImpactForce;
+        [SerializeField] protected GB_NamedFloatEvent emitImpactDot;
+		[SerializeField] protected GB_NamedFloatEvent emitHp;
 		[SerializeField] protected GB_VecEvent emitHpVec;
 		[SerializeField] protected UnityEvent emitKO;
 
@@ -59,7 +60,7 @@ namespace GB.Character.RPG
 			{
 				if (res.type == type)
 				{
-					demage *= 1 - res.effect;
+					demage *= res.effect;
 					Prefab = res.prefab;
 				}
 			}

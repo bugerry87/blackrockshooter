@@ -8,6 +8,11 @@ namespace GB.Utils
 
 		void Start()
 		{
+			Destroy(delay);
+		}
+
+		public void Destroy(float delay)
+		{
 			Destroy(gameObject, delay);
 		}
 	}

@@ -6,8 +6,8 @@ namespace GB.Character.RPG
 	public class GB_LEVEL : GB_RPGAttribute, GB_IExpHandler
 	{
 		[SerializeField][Range(0.001f, 1f)] float scale = 0.125f;
-		[SerializeField] protected GB_FloatEvent emitLevelUp;
-		[SerializeField] protected GB_FloatEvent emitPercentage;
+		[SerializeField] protected GB_NamedFloatEvent emitLevelUp;
+		[SerializeField] protected GB_NamedFloatEvent emitPercentage;
 
 		public int exp { get; protected set; }
 

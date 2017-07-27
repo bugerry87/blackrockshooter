@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using GB.EventSystems;
 
 namespace GB.Character.ThirdPerson
 {

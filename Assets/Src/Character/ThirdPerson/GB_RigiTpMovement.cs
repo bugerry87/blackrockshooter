@@ -57,7 +57,7 @@ namespace GB.Character.ThirdPerson
                 animator.SetFloat(parameters.right, physic.right, sensity, Time.deltaTime);
                 animator.SetFloat(parameters.jumpLeg, physic.jumpLeg);
 
-                animator.SetBool(parameters.crouch, physic.crouch);
+                animator.SetBool(parameters.crouch, physic.crouch || physic.crouching);
                 animator.SetBool(parameters.ground, physic.grounded);
                 animator.SetBool(parameters.slide, physic.sliding);
                 animator.SetBool(parameters.contact, physic.contact);
