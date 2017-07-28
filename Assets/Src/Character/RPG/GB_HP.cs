@@ -6,7 +6,7 @@ using GB.EventSystems;
 namespace GB.Character.RPG
 {	
 	[DisallowMultipleComponent]
-	public class GB_HP : GB_RPGAttribute, GB_ILiveHandler
+	public class GB_HP : GB_RPGAttribute
 	{
 		[Serializable]
 		public class Resistence

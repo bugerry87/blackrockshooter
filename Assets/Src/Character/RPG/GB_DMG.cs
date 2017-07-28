@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using GB.EventSystems;
+using System;
 
 namespace GB.Character.RPG
 {	
@@ -38,7 +39,7 @@ namespace GB.Character.RPG
 			GB_HP hp = other.GetComponent<GB_HP>();
 			if (hp)
 			{
-				effect = curr * Mathf.Max(Mathf.Abs(hp.TakeImpact(transform.position)), 1);
+				effect = Mathf.Min(Mathf.Max(curr + buff, 0) * Mathf.Max(Mathf.Abs(hp.TakeImpact(transform.position)), 1), max);
 				hp.TakeDemage(effectType, effect);
 				hp.SetOffender(offender);
 				if (!hp.Block) prefab = hp.Prefab;

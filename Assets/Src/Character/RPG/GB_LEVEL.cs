@@ -3,7 +3,7 @@ using GB.EventSystems;
 
 namespace GB.Character.RPG
 {
-	public class GB_LEVEL : GB_RPGAttribute, GB_IExpHandler
+	public class GB_LEVEL : GB_RPGAttribute
 	{
 		[SerializeField][Range(0.001f, 1f)] float scale = 0.125f;
 		[SerializeField] protected GB_NamedFloatEvent emitLevelUp;
